@@ -59,7 +59,7 @@ export default function Sidebar() {
   return (
     <div className="fixed top-0 left-0 h-full w-[200px] bg-[#111] border-r border-[#333] flex flex-col py-3 z-50 overflow-y-auto scrollbar-hide">
       <div className="px-4 mb-4">
-        <span className="text-white font-bold text-base">GOTOUkun510</span>
+        <Link href="/" className="text-white font-bold text-sm leading-tight hover:text-gray-300 transition-colors">トルネコの大冒険3<br />攻略wiki</Link>
       </div>
       <nav className="flex flex-col px-2">
         {links.map(link => (

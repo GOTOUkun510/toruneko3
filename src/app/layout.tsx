@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GOTOUkun510",
-  description: "GOTOUkun510のサイト",
+  title: "トルネコの大冒険3 攻略wiki",
+  description: "トルネコの大冒険3（ドラゴンクエストキャラクターズ トルネコの大冒険3 不思議のダンジョン）の攻略wiki。ダンジョン・モンスター・アイテム情報を掲載。",
 };
 
 export default function RootLayout({
