@@ -73,14 +73,16 @@ export default function Sidebar() {
           <Link href="/item/shield" className={navClass('/item/shield')}>盾 / </Link>
           <Link href="/item/ring" className={navClass('/item/ring')}>指輪</Link>
           <br />
-          <Link href="/item/arrow" className={navClass('/item/arrow')}>飛び道具 / </Link>
-          <Link href="/item/food" className={navClass('/item/food')}>食料 / </Link>
+          <Link href="/item/arrow" className={navClass('/item/arrow')}>矢 / </Link>
+          <Link href="/item/food" className={navClass('/item/food')}>パン / </Link>
           <Link href="/item/grass" className={navClass('/item/grass')}>草</Link>
           <br />
           <Link href="/item/scroll" className={navClass('/item/scroll')}>巻物 / </Link>
           <Link href="/item/staff" className={navClass('/item/staff')}>杖 / </Link>
           <Link href="/item/pot" className={navClass('/item/pot')}>壷 / </Link>
           <Link href="/item/other" className={navClass('/item/other')}>その他</Link>
+          <br />
+          <Link href="/item/heart" className={navClass('/item/heart')}>モンスターのこころ</Link>
         </div>
 
         <div className="px-3 pt-2 pb-1 text-xs text-gray-600">追加ダンジョン</div>
