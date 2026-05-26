@@ -9,8 +9,37 @@ const links = [
 ]
 
 const dungeonLinks = [
-  { href: '/dungeon/1', label: '謎のほら穴' },
-  { href: '/dungeon/2', label: 'ダンジョン2' },
+  { href: '/dungeon/1',  label: '謎のほら穴' },
+  { href: '/dungeon/2',  label: 'いざないの洞くつ' },
+  { href: '/dungeon/3',  label: '南海の地下道' },
+  { href: '/dungeon/4',  label: 'さんご礁の神殿 広間' },
+  { href: '/dungeon/5',  label: 'さんご礁の神殿 回廊' },
+  { href: '/dungeon/6',  label: '海底山地 ふもと' },
+  { href: '/dungeon/7',  label: '海底山地 山頂部' },
+  { href: '/dungeon/8',  label: '賢者のほら穴' },
+  { href: '/dungeon/9',  label: '海竜島の遺跡' },
+  { href: '/dungeon/10', label: '灯台の地下室' },
+  { href: '/dungeon/11', label: '遺跡の大空洞 南' },
+  { href: '/dungeon/12', label: '遺跡の大空洞 北' },
+  { href: '/dungeon/13', label: 'バレイナのほら穴' },
+  { href: '/dungeon/14', label: '山脈の尾根' },
+  { href: '/dungeon/15', label: '仙人のほら穴' },
+  { href: '/dungeon/16', label: 'いけにえのほら穴' },
+  { href: '/dungeon/17', label: '魔物のほら穴' },
+  { href: '/dungeon/18', label: '神々の道' },
+  { href: '/dungeon/19', label: '試練の道' },
+  { href: '/dungeon/20', label: '密林の墓場' },
+  { href: '/dungeon/21', label: '密林島のほら穴' },
+  { href: '/dungeon/22', label: '密林島の発掘場' },
+  { href: '/dungeon/23', label: '邪悪な風穴' },
+  { href: '/dungeon/24', label: '暗黒の間' },
+  { href: '/dungeon/25', label: '封印の洞くつ' },
+  { href: '/dungeon/26', label: '異世界の迷宮' },
+  { href: '/dungeon/27', label: '不思議の宝物庫' },
+  { href: '/dungeon/28', label: 'まぼろしの洞くつ' },
+  { href: '/dungeon/29', label: '孤島のほら穴' },
+  { href: '/dungeon/30', label: '化石のほら穴' },
+  { href: '/dungeon/31', label: '魔物の巣' },
 ]
 
 export default function Sidebar() {
@@ -30,18 +59,18 @@ export default function Sidebar() {
 
         <div className="px-3 pt-3 pb-1 text-xs text-gray-500">アイテム</div>
         <div className="px-3 text-sm leading-6">
-          <Link href="/item/weapon" className={navClass('/item/weapon')}>武器 / </Link>          
+          <Link href="/item/weapon" className={navClass('/item/weapon')}>武器 / </Link>
+          <Link href="/item/claw" className={navClass('/item/claw')}>爪 / </Link>
           <Link href="/item/shield" className={navClass('/item/shield')}>盾 / </Link>
-          <Link href="/item/ring" className={navClass('/item/ring')}>指輪 / </Link>          
-          <Link href="/item/arrow" className={navClass('/item/arrow')}>矢 / </Link>
+          <Link href="/item/ring" className={navClass('/item/ring')}>指輪</Link>
           <br />
-          <Link href="/item/claw" className={navClass('/item/claw')}>爪 / </Link>          
-          <Link href="/item/food" className={navClass('/item/food')}>パン / </Link>
+          <Link href="/item/arrow" className={navClass('/item/arrow')}>飛び道具 / </Link>
+          <Link href="/item/food" className={navClass('/item/food')}>食料 / </Link>
           <Link href="/item/grass" className={navClass('/item/grass')}>草</Link>
           <br />
           <Link href="/item/scroll" className={navClass('/item/scroll')}>巻物 / </Link>
           <Link href="/item/staff" className={navClass('/item/staff')}>杖 / </Link>
-          <Link href="/item/pot" className={navClass('/item/pot')}>壷 / 　</Link>
+          <Link href="/item/pot" className={navClass('/item/pot')}>壷 / </Link>
           <Link href="/item/other" className={navClass('/item/other')}>その他</Link>
         </div>
 
