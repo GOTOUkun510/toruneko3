@@ -25,6 +25,8 @@ type Monster = {
   hp: number
   atk: number
   def: number
+  exp?: number
+  special?: string
   drop?: string
   heart?: string
   recruitRate?: number
@@ -33,6 +35,8 @@ type Monster = {
 
 export default function MonsterTable({ monsters }: { monsters: Monster[] }) {
   const hasHeart = monsters.some(m => m.heart !== undefined)
+  const hasExp = monsters.some(m => m.exp !== undefined)
+  const hasSpecial = monsters.some(m => m.special !== undefined)
 
   return (
     <table style={{ tableLayout: 'auto', width: 'auto' }}>
@@ -43,6 +47,8 @@ export default function MonsterTable({ monsters }: { monsters: Monster[] }) {
           <th>HP</th>
           <th>攻撃力</th>
           <th>防御力</th>
+          {hasExp && <th>経験値</th>}
+          {hasSpecial && <th>特殊能力</th>}
           {hasHeart ? (
             <>
               <th>心ドロップ</th>
@@ -64,6 +70,8 @@ export default function MonsterTable({ monsters }: { monsters: Monster[] }) {
             <td>{m.hp}</td>
             <td>{m.atk}</td>
             <td>{m.def}</td>
+            {hasExp && <td>{m.exp ?? ''}</td>}
+            {hasSpecial && <td>{m.special ?? ''}</td>}
             {hasHeart ? (
               <>
                 <td>{m.heart ?? ''}</td>
