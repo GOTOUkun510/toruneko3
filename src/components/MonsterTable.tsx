@@ -1,3 +1,26 @@
+'use client'
+
+import { useState } from 'react'
+
+function MonsterName({ name }: { name: string }) {
+  const [imgLoaded, setImgLoaded] = useState(false)
+  const [imgError, setImgError] = useState(false)
+  return (
+    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+      <img
+        src={`/monsters/${name}.jpg`}
+        alt=""
+        width={60}
+        height={60}
+        style={{ objectFit: 'contain', display: imgLoaded && !imgError ? 'block' : 'none' }}
+        onLoad={() => setImgLoaded(true)}
+        onError={() => setImgError(true)}
+      />
+      {name}
+    </span>
+  )
+}
+
 type Monster = {
   name: string
   floors: string
@@ -36,7 +59,9 @@ export default function MonsterTable({ monsters }: { monsters: Monster[] }) {
       <tbody>
         {monsters.map((m, i) => (
           <tr key={`${m.name}-${i}`}>
-            <td>{m.name}</td>
+            <td>
+              <MonsterName name={m.name} />
+            </td>
             <td>{m.floors}</td>
             <td>{m.hp}</td>
             <td>{m.atk}</td>
