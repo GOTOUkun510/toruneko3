@@ -11,11 +11,8 @@ export default async function DungeonPage({ params }: { params: Promise<{ id: st
     <main>
       <h1 className="text-3xl font-bold mb-4">{data.name}</h1>
       <p>{data.description}</p>
-      <h2>出現モンスター</h2>
       <MonsterTable monsters={data.monsters} />
-      <h2>落ちているアイテム</h2>
       <ItemTable categories={data.itemCategories} />
-      <h2>攻略情報</h2>
       <p>{data.strategy}</p>
     </main>
   )

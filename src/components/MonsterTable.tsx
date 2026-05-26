@@ -9,7 +9,15 @@
 
 export default function MonsterTable({ monsters }: { monsters: Monster[] }) {
   return (
-    <table>
+    <table style={{ tableLayout: 'fixed' }}>
+      <colgroup>
+        <col style={{ width: '30%' }} />
+        <col style={{ width: '15%' }} />
+        <col style={{ width: '10%' }} />
+        <col style={{ width: '10%' }} />
+        <col style={{ width: '10%' }} />
+        <col style={{ width: '25%' }} />
+      </colgroup>
       <thead>
         <tr>
           <th>モンスター名</th>
