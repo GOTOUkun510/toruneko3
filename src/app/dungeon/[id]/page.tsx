@@ -30,7 +30,10 @@ export default async function DungeonPage({ params }: { params: Promise<{ id: st
       <MonsterTable monsters={data.monsters} />
       <ItemTable categories={data.itemCategories} />
       {data.traps && data.traps.length > 0 && (
-        <p><strong>ワナ：</strong>{data.traps.join('・')}</p>
+        <table style={{ tableLayout: 'auto', width: 'auto' }}>
+          <thead><tr><th>ワナ</th></tr></thead>
+          <tbody><tr><td>{data.traps.join(' / ')}</td></tr></tbody>
+        </table>
       )}
       <p>{data.strategy}</p>
     </main>
