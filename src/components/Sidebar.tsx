@@ -3,15 +3,15 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const links = [
-  { href: '/', label: '🏠 ホ�Eム' },
+  { href: '/', label: '🏠 ホーム' },
   { href: '/wiki', label: '📖 Wiki' },
   { href: '/board', label: '💬 掲示板' },
 ]
 
 const extraDungeonLinks = [
-  { href: '/extra-dungeon/1', label: '魔物の忁E��E },
-  { href: '/extra-dungeon/2', label: '未来へ続く遁E },
-  { href: '/extra-dungeon/3', label: 'もっと不思議の洞突E },
+  { href: '/extra-dungeon/1', label: '魔物の心髄' },
+  { href: '/extra-dungeon/2', label: '未来へ続く道' },
+  { href: '/extra-dungeon/3', label: 'もっと不思議の洞窟' },
 ]
 
 const clearDungeonLinks = [
@@ -22,30 +22,30 @@ const clearDungeonLinks = [
 ]
 
 const dungeonLinks = [
-  { href: '/dungeon/1',  label: '謎�Eほら穴' },
-  { href: '/dungeon/2',  label: 'ぁE��なぁE�E洞くつ' },
+  { href: '/dungeon/1',  label: '謎のほら穴' },
+  { href: '/dungeon/2',  label: 'いざないの洞くつ' },
   { href: '/dungeon/3',  label: '南海の地下道' },
-  { href: '/dungeon/4',  label: 'さんご礁�E神殿 庁E��' },
-  { href: '/dungeon/5',  label: 'さんご礁�E神殿 回廁E },
+  { href: '/dungeon/4',  label: 'さんご礁の神殿 広間' },
+  { href: '/dungeon/5',  label: 'さんご礁の神殿 回廊' },
   { href: '/dungeon/6',  label: '海底山地 ふもと' },
   { href: '/dungeon/7',  label: '海底山地 山頂部' },
-  { href: '/dungeon/8',  label: '賢老E�Eほら穴' },
+  { href: '/dungeon/8',  label: '賢者のほら穴' },
   { href: '/dungeon/9',  label: '海竜島の遺跡' },
   { href: '/dungeon/10', label: '灯台の地下室' },
-  { href: '/dungeon/11', label: '遺跡の大空洁E十E },
-  { href: '/dungeon/12', label: '遺跡の大空洁E匁E },
-  { href: '/dungeon/13', label: 'バレイナ�Eほら穴' },
-  { href: '/dungeon/14', label: '山脈�E尾根' },
+  { href: '/dungeon/11', label: '遺跡の大空洞 南' },
+  { href: '/dungeon/12', label: '遺跡の大空洞 北' },
+  { href: '/dungeon/13', label: 'バレイナのほら穴' },
+  { href: '/dungeon/14', label: '山脈の尾根' },
   { href: '/dungeon/15', label: '仙人のほら穴' },
-  { href: '/dungeon/16', label: 'ぁE��にえ�Eほら穴' },
+  { href: '/dungeon/16', label: 'いけにえのほら穴' },
   { href: '/dungeon/17', label: '魔物のほら穴' },
-  { href: '/dungeon/18', label: '神、E�E遁E },
-  { href: '/dungeon/19', label: '試練の遁E },
-  { href: '/dungeon/20', label: '寁E��の墓場' },
-  { href: '/dungeon/21', label: '寁E��島のほら穴' },
-  { href: '/dungeon/22', label: '寁E��島の発掘場' },
+  { href: '/dungeon/18', label: '神々の道' },
+  { href: '/dungeon/19', label: '試練の道' },
+  { href: '/dungeon/20', label: '密林の墓場' },
+  { href: '/dungeon/21', label: '密林島のほら穴' },
+  { href: '/dungeon/22', label: '密林島の発掘場' },
   { href: '/dungeon/23', label: '邪悪な風穴' },
-  { href: '/dungeon/24', label: '暗黒�E閁E },
+  { href: '/dungeon/24', label: '暗黒の間' },
   { href: '/dungeon/29', label: '孤島のほら穴' },
   { href: '/dungeon/30', label: '化石のほら穴' },
   { href: '/dungeon/31', label: '魔物の巣' },
@@ -66,21 +66,21 @@ export default function Sidebar() {
           <Link key={link.href} href={link.href} className={`px-3 py-1 rounded text-xs ${navClass(link.href)}`}>{link.label}</Link>
         ))}
 
-        <div className="px-3 pt-2 pb-1 text-xs text-gray-600">アイチE��</div>
+        <div className="px-3 pt-2 pb-1 text-xs text-gray-600">アイテム</div>
         <div className="px-3 text-xs leading-5">
           <Link href="/item/weapon" className={navClass('/item/weapon')}>武器 / </Link>
           <Link href="/item/claw" className={navClass('/item/claw')}>爪 / </Link>
           <Link href="/item/shield" className={navClass('/item/shield')}>盾 / </Link>
-          <Link href="/item/ring" className={navClass('/item/ring')}>持E��</Link>
+          <Link href="/item/ring" className={navClass('/item/ring')}>指輪</Link>
           <br />
-          <Link href="/item/arrow" className={navClass('/item/arrow')}>飛�E道�E / </Link>
+          <Link href="/item/arrow" className={navClass('/item/arrow')}>飛び道具 / </Link>
           <Link href="/item/food" className={navClass('/item/food')}>食料 / </Link>
-          <Link href="/item/grass" className={navClass('/item/grass')}>荁E/Link>
+          <Link href="/item/grass" className={navClass('/item/grass')}>草</Link>
           <br />
           <Link href="/item/scroll" className={navClass('/item/scroll')}>巻物 / </Link>
-          <Link href="/item/staff" className={navClass('/item/staff')}>杁E/ </Link>
+          <Link href="/item/staff" className={navClass('/item/staff')}>杖 / </Link>
           <Link href="/item/pot" className={navClass('/item/pot')}>壷 / </Link>
-          <Link href="/item/other" className={navClass('/item/other')}>そ�E仁E/Link>
+          <Link href="/item/other" className={navClass('/item/other')}>その他</Link>
         </div>
 
         <div className="px-3 pt-2 pb-1 text-xs text-gray-600">追加ダンジョン</div>
