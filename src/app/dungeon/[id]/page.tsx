@@ -16,12 +16,12 @@ function getDungeonFloors(monsters: { floors: string }[]): string {
 export default async function DungeonPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const data = dungeonData[id]
-  if (!data) return <main><h1>ダンジョンが見つかりません</h1></main>
+  if (!data) return <div><h1>ダンジョンが見つかりません</h1></div>
 
   const floors = getDungeonFloors(data.monsters)
 
   return (
-    <main>
+    <div>
       <div style={{ padding: '2rem 2rem 0' }}>
         <div className="flex items-baseline gap-4 mb-4">
           <h1 className="text-3xl font-bold">{data.name}</h1>
@@ -40,6 +40,6 @@ export default async function DungeonPage({ params }: { params: Promise<{ id: st
       <div style={{ padding: '0 2rem 2rem' }}>
         <p>{data.strategy}</p>
       </div>
-    </main>
+    </div>
   )
 }
