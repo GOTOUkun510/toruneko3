@@ -8,20 +8,6 @@ const links = [
   { href: '/board', label: '💬 掲示板' },
 ]
 
-const itemLinks = [
-  { href: '/item/weapon', label: '武器' },
-  { href: '/item/claw',   label: '爪' },
-  { href: '/item/shield', label: '盾' },
-  { href: '/item/ring',   label: '指輪' },
-  { href: '/item/arrow',  label: '飛び道具' },
-  { href: '/item/food',   label: '食料' },
-  { href: '/item/grass',  label: '草' },
-  { href: '/item/scroll', label: '巻物' },
-  { href: '/item/staff',  label: '杖' },
-  { href: '/item/pot',    label: '壷' },
-  { href: '/item/other',  label: 'その他' },
-]
-
 const dungeonLinks = [
   { href: '/dungeon/1', label: '謎のほら穴' },
   { href: '/dungeon/2', label: 'ダンジョン2' },
@@ -44,12 +30,28 @@ export default function Sidebar() {
 
         <div className="px-3 pt-3 pb-1 text-xs text-gray-500">アイテム</div>
         <div className="px-3 text-sm leading-6">
-          {itemLinks.map((link, i) => (
-            <span key={link.href}>
-              <Link href={link.href} className={navClass(link.href)}>{link.label}</Link>
-              {i < itemLinks.length - 1 && <span className="text-gray-600"> / </span>}
-            </span>
-          ))}
+          {/* ここを自由に編集してください */}
+          <Link href="/item/weapon" className={navClass('/item/weapon')}>武器</Link>
+          {' / '}
+          <Link href="/item/claw" className={navClass('/item/claw')}>爪</Link>
+          {' / '}
+          <Link href="/item/shield" className={navClass('/item/shield')}>盾</Link>
+          {' / '}
+          <Link href="/item/ring" className={navClass('/item/ring')}>指輪</Link>
+          <br />
+          <Link href="/item/arrow" className={navClass('/item/arrow')}>飛び道具</Link>
+          {' / '}
+          <Link href="/item/food" className={navClass('/item/food')}>食料</Link>
+          {' / '}
+          <Link href="/item/grass" className={navClass('/item/grass')}>草</Link>
+          <br />
+          <Link href="/item/scroll" className={navClass('/item/scroll')}>巻物</Link>
+          {' / '}
+          <Link href="/item/staff" className={navClass('/item/staff')}>杖</Link>
+          {' / '}
+          <Link href="/item/pot" className={navClass('/item/pot')}>壷</Link>
+          {' / '}
+          <Link href="/item/other" className={navClass('/item/other')}>その他</Link>
         </div>
 
         <div className="px-3 pt-3 pb-1 text-xs text-gray-500 mt-2">ダンジョン</div>
