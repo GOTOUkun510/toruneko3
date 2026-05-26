@@ -1,15 +1,13 @@
-﻿type Item = { name: string }
-
-export default function ItemTable({ items }: { items: Item[] }) {
+﻿export default function ItemTable({ rows }: { rows: string[][] }) {
   return (
     <table>
       <thead>
-        <tr><th>アイテム名</th></tr>
+        <tr><th colSpan={4}>落ちているアイテム</th></tr>
       </thead>
       <tbody>
-        {items.map((item) => (
-          <tr key={item.name}>
-            <td>{item.name}</td>
+        {rows.map((row, i) => (
+          <tr key={i}>
+            {row.map((cell, j) => <td key={j}>{cell}</td>)}
           </tr>
         ))}
       </tbody>
