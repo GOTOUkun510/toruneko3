@@ -2,13 +2,17 @@
 
 import { useState } from 'react'
 
+function getImageName(name: string): string {
+  return name.replace(/^Lv\d+\s*/, '')
+}
+
 function MonsterName({ name }: { name: string }) {
   const [imgError, setImgError] = useState(false)
   return (
     <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
       {!imgError && (
         <img
-          src={`/monsters/${name}.jpg`}
+          src={`/monsters/${getImageName(name)}.jpg`}
           alt={name}
           style={{ width: 60, height: 60, objectFit: 'contain' }}
           onError={() => setImgError(true)}
