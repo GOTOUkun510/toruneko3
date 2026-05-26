@@ -14,7 +14,7 @@ function MonsterName({ name }: { name: string }) {
         <img
           src={`/monsters/${getImageName(name)}.jpg`}
           alt={name}
-          style={{ width: 60, height: 60, objectFit: 'contain', display: 'block' }}
+          style={{ width: 60, height: 60, objectFit: 'contain', objectPosition: 'bottom', display: 'block' }}
           onError={() => setImgError(true)}
         />
       )}
