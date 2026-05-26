@@ -9,7 +9,7 @@ export default async function DungeonPage({ params }: { params: Promise<{ id: st
 
   return (
     <main>
-      <h1>{data.name}</h1>
+      <h1 className="text-3xl font-bold mb-4">{data.name}</h1>
       <p>{data.description}</p>
       <h2>出現モンスター</h2>
       <MonsterTable monsters={data.monsters} />
