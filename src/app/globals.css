@@ -38,6 +38,16 @@ th, td {
 }
 
 th {
-  background: #222;
+  background: #3a3a5c;
+  color: #fff;
   font-weight: bold;
+}
+
+td {
+  background: #1e1e1e;
+  color: #eee;
+}
+
+tr:nth-child(even) td {
+  background: #2a2a2a;
 }
