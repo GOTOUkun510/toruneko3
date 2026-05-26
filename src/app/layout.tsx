@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "トルネコの大冒険3 攻略wiki",
-  description: "トルネコの大冒険3（ドラゴンクエストキャラクターズ トルネコの大冒険3 不思議のダンジョン）の攻略wiki。ダンジョン・モンスター・アイテム情報を掲載。",
+  description: "トルネコの大冒険3�E�ドラゴンクエストキャラクターズ トルネコの大冒険3 不思議のダンジョン�E��E攻略wiki。ダンジョン・モンスター・アイチE��惁E��を掲載、E,
 };
 
 export default function RootLayout({
@@ -30,7 +30,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex bg-[#1a1a1a]">
         <Sidebar />
-        <main className="ml-[200px] flex-1">{children}</main>
+        <main className="ml-[160px] flex-1">{children}</main>
       </body>
     </html>
   );
