@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "トルネコの大冒険3 攻略wiki",
-  description: "トルネコの大冒険3（ドラゴンクエストキャラクターズ トルネコの大冒険3 不思議のダンジョン）の攻略wiki。ダンジョン・モンスター・アイテム情報を掲載。",
+  title: "トルネコの大冒険3 攻略wiki MOD",
+  description: "トルネコの大冒険3（ドラゴンクエストキャラクターズ トルネコの大冒険3 不思議のダンジョン）MOD攻略wiki。魔物の心髄・未来へ続く道・もっと不思議の洞窟などMODダンジョンのモンスター・アイテム・攻略情報を掲載。",
 };
 
 export default function RootLayout({
