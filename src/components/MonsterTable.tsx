@@ -43,7 +43,7 @@ export default function MonsterTable({ monsters }: { monsters: Monster[] }) {
   const hasSpecial = monsters.some(m => m.special !== undefined)
 
   return (
-    <table style={{ tableLayout: 'auto', width: '100%' }}>
+    <table style={{ tableLayout: 'auto', width: 'auto' }}>
       <thead>
         <tr>
           <th>モンスター名</th>

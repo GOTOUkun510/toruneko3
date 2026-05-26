@@ -22,20 +22,24 @@ export default async function DungeonPage({ params }: { params: Promise<{ id: st
 
   return (
     <main>
-      <div className="flex items-baseline gap-4 mb-4">
-        <h1 className="text-3xl font-bold">{data.name}</h1>
-        {floors && <span className="text-gray-400">{floors}</span>}
+      <div style={{ padding: '2rem 2rem 0' }}>
+        <div className="flex items-baseline gap-4 mb-4">
+          <h1 className="text-3xl font-bold">{data.name}</h1>
+          {floors && <span className="text-gray-400">{floors}</span>}
+        </div>
+        <p>{data.description}</p>
       </div>
-      <p>{data.description}</p>
       <MonsterTable monsters={data.monsters} />
       <ItemTable categories={data.itemCategories} />
       {data.traps && data.traps.length > 0 && (
-        <table style={{ tableLayout: 'auto', width: 'auto' }}>
+        <table>
           <thead><tr><th>ワナ</th></tr></thead>
           <tbody><tr><td>{data.traps.join(' / ')}</td></tr></tbody>
         </table>
       )}
-      <p>{data.strategy}</p>
+      <div style={{ padding: '0 2rem 2rem' }}>
+        <p>{data.strategy}</p>
+      </div>
     </main>
   )
 }
