@@ -29,6 +29,9 @@ export default async function DungeonPage({ params }: { params: Promise<{ id: st
       <p>{data.description}</p>
       <MonsterTable monsters={data.monsters} />
       <ItemTable categories={data.itemCategories} />
+      {data.traps && data.traps.length > 0 && (
+        <p><strong>ワナ：</strong>{data.traps.join('・')}</p>
+      )}
       <p>{data.strategy}</p>
     </main>
   )
