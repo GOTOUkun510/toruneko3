@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -13,8 +13,29 @@ const dungeonLinks = [
   { href: '/dungeon/2', label: 'ダンジョン2' },
 ]
 
+const itemLinks = [
+  { href: '/item/weapon', label: '武器' },
+  { href: '/item/claw',   label: '爪' },
+  { href: '/item/shield', label: '盾' },
+  { href: '/item/ring',   label: '指輪' },
+  { href: '/item/arrow',  label: '飛び道具' },
+  { href: '/item/food',   label: '食料' },
+  { href: '/item/grass',  label: '草' },
+  { href: '/item/scroll', label: '巻物' },
+  { href: '/item/staff',  label: '杖' },
+  { href: '/item/pot',    label: '壷' },
+  { href: '/item/other',  label: 'その他' },
+]
+
 export default function Sidebar() {
   const pathname = usePathname()
+  const navClass = (href: string) =>
+    `px-3 py-2 rounded text-sm transition-colors ${
+      pathname === href
+        ? 'bg-[#333] text-white font-bold'
+        : 'text-gray-400 hover:bg-[#222] hover:text-white'
+    }`
+
   return (
     <div className="fixed top-0 left-0 h-full w-[200px] bg-[#111] border-r border-[#333] flex flex-col py-4 z-50 overflow-y-auto">
       <div className="px-4 mb-6">
@@ -22,31 +43,15 @@ export default function Sidebar() {
       </div>
       <nav className="flex flex-col gap-1 px-2">
         {links.map(link => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className={`px-3 py-2 rounded text-sm transition-colors ${
-              pathname === link.href
-                ? 'bg-[#333] text-white font-bold'
-                : 'text-gray-400 hover:bg-[#222] hover:text-white'
-            }`}
-          >
-            {link.label}
-          </Link>
+          <Link key={link.href} href={link.href} className={navClass(link.href)}>{link.label}</Link>
+        ))}
+        <div className="px-3 py-2 text-xs text-gray-500 mt-2">アイテム</div>
+        {itemLinks.map(link => (
+          <Link key={link.href} href={link.href} className={navClass(link.href)}>{link.label}</Link>
         ))}
         <div className="px-3 py-2 text-xs text-gray-500 mt-2">ダンジョン</div>
         {dungeonLinks.map(link => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className={`px-3 py-2 rounded text-sm transition-colors ${
-              pathname === link.href
-                ? 'bg-[#333] text-white font-bold'
-                : 'text-gray-400 hover:bg-[#222] hover:text-white'
-            }`}
-          >
-            {link.label}
-          </Link>
+          <Link key={link.href} href={link.href} className={navClass(link.href)}>{link.label}</Link>
         ))}
       </nav>
     </div>
