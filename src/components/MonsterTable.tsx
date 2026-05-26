@@ -1,13 +1,18 @@
-﻿type Monster = {
+type Monster = {
   name: string
   floors: string
   hp: number
   atk: number
   def: number
   drop?: string
+  heart?: string
+  recruitRate?: number
+  clawChance?: string
 }
 
 export default function MonsterTable({ monsters }: { monsters: Monster[] }) {
+  const hasHeart = monsters.some(m => m.heart !== undefined)
+
   return (
     <table style={{ tableLayout: 'auto', width: 'auto' }}>
       <thead>
@@ -17,18 +22,34 @@ export default function MonsterTable({ monsters }: { monsters: Monster[] }) {
           <th>HP</th>
           <th>攻撃力</th>
           <th>防御力</th>
-          <th>ドロップ</th>
+          {hasHeart ? (
+            <>
+              <th>心ドロップ</th>
+              <th>勧誘率</th>
+              <th>ポポロLv1魔法の爪</th>
+            </>
+          ) : (
+            <th>ドロップ</th>
+          )}
         </tr>
       </thead>
       <tbody>
-        {monsters.map((m) => (
-          <tr key={m.name}>
+        {monsters.map((m, i) => (
+          <tr key={`${m.name}-${i}`}>
             <td>{m.name}</td>
             <td>{m.floors}</td>
             <td>{m.hp}</td>
             <td>{m.atk}</td>
             <td>{m.def}</td>
-            <td>{m.drop ?? ''}</td>
+            {hasHeart ? (
+              <>
+                <td>{m.heart ?? ''}</td>
+                <td>{m.recruitRate !== undefined ? m.recruitRate : ''}</td>
+                <td>{m.clawChance ?? ''}</td>
+              </>
+            ) : (
+              <td>{m.drop ?? ''}</td>
+            )}
           </tr>
         ))}
       </tbody>
