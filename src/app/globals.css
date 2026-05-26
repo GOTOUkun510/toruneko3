@@ -24,3 +24,20 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+th, td {
+  border: 1px solid #555;
+  padding: 6px 10px;
+  text-align: left;
+}
+
+th {
+  background: #222;
+  font-weight: bold;
+}

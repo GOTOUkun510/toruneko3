@@ -30,18 +30,18 @@ export default function Sidebar() {
 
         <div className="px-3 pt-3 pb-1 text-xs text-gray-500">アイテム</div>
         <div className="px-3 text-sm leading-6">
-          <Link href="/item/weapon" className={navClass('/item/weapon')}>武器 / </Link>
-          <Link href="/item/claw" className={navClass('/item/claw')}>爪 / </Link>
+          <Link href="/item/weapon" className={navClass('/item/weapon')}>武器 / </Link>          
           <Link href="/item/shield" className={navClass('/item/shield')}>盾 / </Link>
-          <Link href="/item/ring" className={navClass('/item/ring')}>指輪</Link>
+          <Link href="/item/ring" className={navClass('/item/ring')}>指輪 / </Link>          
+          <Link href="/item/arrow" className={navClass('/item/arrow')}>矢 / </Link>
           <br />
-          <Link href="/item/arrow" className={navClass('/item/arrow')}>飛び道具 / </Link>
-          <Link href="/item/food" className={navClass('/item/food')}>食料 / </Link>
+          <Link href="/item/claw" className={navClass('/item/claw')}>爪 / </Link>          
+          <Link href="/item/food" className={navClass('/item/food')}>パン / </Link>
           <Link href="/item/grass" className={navClass('/item/grass')}>草</Link>
           <br />
           <Link href="/item/scroll" className={navClass('/item/scroll')}>巻物 / </Link>
           <Link href="/item/staff" className={navClass('/item/staff')}>杖 / </Link>
-          <Link href="/item/pot" className={navClass('/item/pot')}>壷 / </Link>
+          <Link href="/item/pot" className={navClass('/item/pot')}>壷 / 　</Link>
           <Link href="/item/other" className={navClass('/item/other')}>その他</Link>
         </div>
 
