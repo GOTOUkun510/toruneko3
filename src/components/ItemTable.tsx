@@ -2,7 +2,7 @@
 
 export default function ItemTable({ categories }: { categories: ItemCategory[] }) {
   return (
-    <table>
+    <table style={{ tableLayout: 'auto', width: 'auto' }}>
       <thead>
         <tr><th>種別</th><th>アイテム</th></tr>
       </thead>
