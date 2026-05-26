@@ -9,7 +9,7 @@ function getImageName(name: string): string {
 function MonsterName({ name }: { name: string }) {
   const [imgError, setImgError] = useState(false)
   return (
-    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', whiteSpace: 'nowrap' }}>
       {!imgError && (
         <img
           src={`/monsters/${getImageName(name)}.jpg`}
