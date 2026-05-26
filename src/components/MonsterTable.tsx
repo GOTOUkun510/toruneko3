@@ -67,7 +67,7 @@ export default function MonsterTable({ monsters }: { monsters: Monster[] }) {
       <tbody>
         {monsters.map((m, i) => (
           <tr key={`${m.name}-${i}`}>
-            <td style={{ whiteSpace: 'nowrap' }}>
+            <td>
               <MonsterName name={m.name} />
             </td>
             <td>{m.floors}</td>
