@@ -9,9 +9,9 @@ const links = [
 ]
 
 const extraDungeonLinks = [
-  { href: 'https://w.atwiki.jp/toruneko3mod/pages/10.html', label: '魔物の心髄' },
-  { href: 'https://w.atwiki.jp/toruneko3mod/pages/11.html', label: '未来へ続く道' },
-  { href: 'https://w.atwiki.jp/toruneko3mod/?page=%E3%82%82%E3%81%A3%E3%81%A8%E4%B8%8D%E6%80%9D%E8%AD%B0%E3%81%AE%E6%B4%9E%E7%AA%9F', label: 'もっと不思議の洞窟' },
+  { href: '/extra-dungeon/1', label: '魔物の心髄' },
+  { href: '/extra-dungeon/2', label: '未来へ続く道' },
+  { href: '/extra-dungeon/3', label: 'もっと不思議の洞窟' },
 ]
 
 const clearDungeonLinks = [
@@ -85,7 +85,7 @@ export default function Sidebar() {
 
         <div className="px-3 pt-2 pb-1 text-xs text-gray-600">追加ダンジョン</div>
         {extraDungeonLinks.map(link => (
-          <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="px-3 py-0.5 rounded text-xs text-gray-400 hover:text-white transition-colors">{link.label}</a>
+          <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`}>{link.label}</Link>
         ))}
 
         <div className="px-3 pt-2 pb-1 text-xs text-gray-600">クリア後ダンジョン</div>
