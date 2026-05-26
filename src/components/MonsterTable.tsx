@@ -9,7 +9,7 @@ function MonsterName({ name }: { name: string }) {
       {!imgError && (
         <img
           src={`/monsters/${name}.jpg`}
-          alt=""
+          alt={name}
           style={{ width: 60, height: 60, objectFit: 'contain' }}
           onError={() => setImgError(true)}
         />
