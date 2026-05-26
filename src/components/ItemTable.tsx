@@ -1,13 +1,16 @@
-﻿export default function ItemTable({ rows }: { rows: string[][] }) {
+﻿type ItemCategory = { label: string; items: string[] }
+
+export default function ItemTable({ categories }: { categories: ItemCategory[] }) {
   return (
     <table>
       <thead>
-        <tr><th colSpan={4}>落ちているアイテム</th></tr>
+        <tr><th>種別</th><th>アイテム</th></tr>
       </thead>
       <tbody>
-        {rows.map((row, i) => (
-          <tr key={i}>
-            {row.map((cell, j) => <td key={j}>{cell}</td>)}
+        {categories.map((cat) => (
+          <tr key={cat.label}>
+            <td style={{ whiteSpace: 'nowrap', fontWeight: 'bold' }}>{cat.label}</td>
+            <td>{cat.items.join(' / ')}</td>
           </tr>
         ))}
       </tbody>
