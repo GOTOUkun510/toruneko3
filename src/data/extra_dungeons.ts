@@ -214,7 +214,7 @@ export const extraDungeonData: Record<string, DungeonData> = {
     { name: 'ミミックLv8', floors: '32~36', hp: 69, atk: 30, def: 24, heart: '白紙の心', recruitRate: 10, clawChance: '3.2%' },
     { name: 'ミミックLv9', floors: '37~45', hp: 71, atk: 32, def: 27, heart: '白紙の心', recruitRate: 10, clawChance: '3.2%' },
     { name: 'パンドラボックス', floors: '46~99', hp: 85, atk: 47, def: 27, heart: '白紙の心', recruitRate: 100, clawChance: '12.2%' },
-    { name: 'ひとくいばこ', floors: '6~79', hp: 20, atk: 40, def: 10, heart: '白紙の心', recruitRate: 0, clawChance: '0%' },
+    { name: 'ひとくいばこ', floors: '6~79', hp: 20, atk: 40, def: 10, heart: '白紙の心', recruitRate: 1, clawChance: '2.3%' },
   ], itemCategories: [], strategy: '' },
   '2': { name: '未来へ続く道',     description: '', monsters: [], itemCategories: [], strategy: '' },
   '3': { name: 'もっと不思議の洞窟', description: '', monsters: [], itemCategories: [], strategy: '' },
