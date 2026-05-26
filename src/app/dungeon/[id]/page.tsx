@@ -2,8 +2,9 @@
 import MonsterTable from '@/components/MonsterTable'
 import ItemTable from '@/components/ItemTable'
 
-export default function DungeonPage({ params }: { params: { id: string } }) {
-  const data = dungeonData[params.id]
+export default async function DungeonPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
+  const data = dungeonData[id]
   if (!data) return <main><h1>ダンジョンが見つかりません</h1></main>
 
   return (
