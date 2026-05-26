@@ -22,8 +22,10 @@ export default async function DungeonPage({ params }: { params: Promise<{ id: st
 
   return (
     <main>
-      <h1 className="text-3xl font-bold mb-1">{data.name}</h1>
-      {floors && <p className="text-gray-400 mb-4">{floors}</p>}
+      <div className="flex items-baseline gap-4 mb-4">
+        <h1 className="text-3xl font-bold">{data.name}</h1>
+        {floors && <span className="text-gray-400">{floors}</span>}
+      </div>
       <p>{data.description}</p>
       <MonsterTable monsters={data.monsters} />
       <ItemTable categories={data.itemCategories} />
