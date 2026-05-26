@@ -3,19 +3,17 @@
 import { useState } from 'react'
 
 function MonsterName({ name }: { name: string }) {
-  const [imgLoaded, setImgLoaded] = useState(false)
   const [imgError, setImgError] = useState(false)
   return (
     <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-      <img
-        src={`/monsters/${name}.jpg`}
-        alt=""
-        width={60}
-        height={60}
-        style={{ objectFit: 'contain', display: imgLoaded && !imgError ? 'block' : 'none' }}
-        onLoad={() => setImgLoaded(true)}
-        onError={() => setImgError(true)}
-      />
+      {!imgError && (
+        <img
+          src={`/monsters/${name}.jpg`}
+          alt=""
+          style={{ width: 60, height: 60, objectFit: 'contain' }}
+          onError={() => setImgError(true)}
+        />
+      )}
       {name}
     </span>
   )
