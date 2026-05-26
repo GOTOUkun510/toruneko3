@@ -14,7 +14,7 @@ function MonsterName({ name }: { name: string }) {
         <img
           src={`/monsters/${getImageName(name)}.jpg`}
           alt={name}
-          style={{ width: 60, height: 60, objectFit: 'contain' }}
+          style={{ width: 60, height: 60, objectFit: 'contain', display: 'block' }}
           onError={() => setImgError(true)}
         />
       )}
@@ -67,7 +67,7 @@ export default function MonsterTable({ monsters }: { monsters: Monster[] }) {
       <tbody>
         {monsters.map((m, i) => (
           <tr key={`${m.name}-${i}`}>
-            <td>
+            <td style={{ padding: '0 10px' }}>
               <MonsterName name={m.name} />
             </td>
             <td style={{ whiteSpace: 'nowrap' }}>{m.floors}</td>
