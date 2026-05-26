@@ -1,28 +1,34 @@
 ﻿type Monster = {
   name: string
+  floors: string
   hp: number
-  exp: number
-  floors: string[]
+  atk: number
+  def: number
+  drop?: string
 }
 
-export default function MonsterTable({ monsters, floorLabels }: { monsters: Monster[]; floorLabels: string[] }) {
+export default function MonsterTable({ monsters }: { monsters: Monster[] }) {
   return (
     <table>
       <thead>
         <tr>
           <th>モンスター名</th>
+          <th>出現階層</th>
           <th>HP</th>
-          <th>経験値</th>
-          {floorLabels.map(f => <th key={f}>{f}</th>)}
+          <th>攻撃力</th>
+          <th>防御力</th>
+          <th>ドロップ</th>
         </tr>
       </thead>
       <tbody>
         {monsters.map((m) => (
           <tr key={m.name}>
             <td>{m.name}</td>
+            <td>{m.floors}</td>
             <td>{m.hp}</td>
-            <td>{m.exp}</td>
-            {m.floors.map((v, i) => <td key={i}>{v}</td>)}
+            <td>{m.atk}</td>
+            <td>{m.def}</td>
+            <td>{m.drop ?? ''}</td>
           </tr>
         ))}
       </tbody>
