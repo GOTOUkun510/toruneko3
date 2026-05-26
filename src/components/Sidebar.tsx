@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -6,6 +6,19 @@ const links = [
   { href: '/', label: '🏠 ホーム' },
   { href: '/wiki', label: '📖 Wiki' },
   { href: '/board', label: '💬 掲示板' },
+]
+
+const extraDungeonLinks = [
+  { href: 'https://w.atwiki.jp/toruneko3mod/pages/10.html', label: '魔物の心髄' },
+  { href: 'https://w.atwiki.jp/toruneko3mod/pages/11.html', label: '未来へ続く道' },
+  { href: 'https://w.atwiki.jp/toruneko3mod/?page=%E3%82%82%E3%81%A3%E3%81%A8%E4%B8%8D%E6%80%9D%E8%AD%B0%E3%81%AE%E6%B4%9E%E7%AA%9F', label: 'もっと不思議の洞窟' },
+]
+
+const clearDungeonLinks = [
+  { href: '/dungeon/25', label: '封印の洞くつ' },
+  { href: '/dungeon/26', label: '異世界の迷宮' },
+  { href: '/dungeon/27', label: '不思議の宝物庫' },
+  { href: '/dungeon/28', label: 'まぼろしの洞くつ' },
 ]
 
 const dungeonLinks = [
@@ -33,10 +46,6 @@ const dungeonLinks = [
   { href: '/dungeon/22', label: '密林島の発掘場' },
   { href: '/dungeon/23', label: '邪悪な風穴' },
   { href: '/dungeon/24', label: '暗黒の間' },
-  { href: '/dungeon/25', label: '封印の洞くつ' },
-  { href: '/dungeon/26', label: '異世界の迷宮' },
-  { href: '/dungeon/27', label: '不思議の宝物庫' },
-  { href: '/dungeon/28', label: 'まぼろしの洞くつ' },
   { href: '/dungeon/29', label: '孤島のほら穴' },
   { href: '/dungeon/30', label: '化石のほら穴' },
   { href: '/dungeon/31', label: '魔物の巣' },
@@ -73,6 +82,16 @@ export default function Sidebar() {
           <Link href="/item/pot" className={navClass('/item/pot')}>壷 / </Link>
           <Link href="/item/other" className={navClass('/item/other')}>その他</Link>
         </div>
+
+        <div className="px-3 pt-2 pb-1 text-xs text-gray-600">追加ダンジョン</div>
+        {extraDungeonLinks.map(link => (
+          <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="px-3 py-0.5 rounded text-xs text-gray-400 hover:text-white transition-colors">{link.label}</a>
+        ))}
+
+        <div className="px-3 pt-2 pb-1 text-xs text-gray-600">クリア後ダンジョン</div>
+        {clearDungeonLinks.map(link => (
+          <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`}>{link.label}</Link>
+        ))}
 
         <div className="px-3 pt-2 pb-1 text-xs text-gray-600">ダンジョン</div>
         {dungeonLinks.map(link => (
