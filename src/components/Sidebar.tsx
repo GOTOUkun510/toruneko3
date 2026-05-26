@@ -48,7 +48,7 @@ export default function Sidebar() {
     `hover:text-white transition-colors ${pathname === href ? 'text-white font-bold' : 'text-gray-400'}`
 
   return (
-    <div className="fixed top-0 left-0 h-full w-[200px] bg-[#111] border-r border-[#333] flex flex-col py-3 z-50 overflow-y-auto">
+    <div className="fixed top-0 left-0 h-full w-[200px] bg-[#111] border-r border-[#333] flex flex-col py-3 z-50 overflow-y-auto scrollbar-hide">
       <div className="px-4 mb-4">
         <span className="text-white font-bold text-base">GOTOUkun510</span>
       </div>
