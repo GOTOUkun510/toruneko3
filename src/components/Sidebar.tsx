@@ -48,17 +48,17 @@ export default function Sidebar() {
     `hover:text-white transition-colors ${pathname === href ? 'text-white font-bold' : 'text-gray-400'}`
 
   return (
-    <div className="fixed top-0 left-0 h-full w-[200px] bg-[#111] border-r border-[#333] flex flex-col py-4 z-50 overflow-y-auto">
-      <div className="px-4 mb-6">
-        <span className="text-white font-bold text-lg">GOTOUkun510</span>
+    <div className="fixed top-0 left-0 h-full w-[200px] bg-[#111] border-r border-[#333] flex flex-col py-3 z-50 overflow-y-auto">
+      <div className="px-4 mb-4">
+        <span className="text-white font-bold text-base">GOTOUkun510</span>
       </div>
-      <nav className="flex flex-col gap-1 px-2">
+      <nav className="flex flex-col px-2">
         {links.map(link => (
-          <Link key={link.href} href={link.href} className={`px-3 py-2 rounded text-sm ${navClass(link.href)}`}>{link.label}</Link>
+          <Link key={link.href} href={link.href} className={`px-3 py-1 rounded text-xs ${navClass(link.href)}`}>{link.label}</Link>
         ))}
 
-        <div className="px-3 pt-3 pb-1 text-xs text-gray-500">アイテム</div>
-        <div className="px-3 text-sm leading-6">
+        <div className="px-3 pt-2 pb-1 text-xs text-gray-600">アイテム</div>
+        <div className="px-3 text-xs leading-5">
           <Link href="/item/weapon" className={navClass('/item/weapon')}>武器 / </Link>
           <Link href="/item/claw" className={navClass('/item/claw')}>爪 / </Link>
           <Link href="/item/shield" className={navClass('/item/shield')}>盾 / </Link>
@@ -74,9 +74,9 @@ export default function Sidebar() {
           <Link href="/item/other" className={navClass('/item/other')}>その他</Link>
         </div>
 
-        <div className="px-3 pt-3 pb-1 text-xs text-gray-500 mt-2">ダンジョン</div>
+        <div className="px-3 pt-2 pb-1 text-xs text-gray-600">ダンジョン</div>
         {dungeonLinks.map(link => (
-          <Link key={link.href} href={link.href} className={`px-3 py-2 rounded text-sm ${navClass(link.href)}`}>{link.label}</Link>
+          <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`}>{link.label}</Link>
         ))}
       </nav>
     </div>
