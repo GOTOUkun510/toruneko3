@@ -1,4 +1,4 @@
-﻿type ItemCategory = { label: string; items: string[] }
+﻿type ItemCategory = { label?: string; category?: string; items: string[] }
 
 export default function ItemTable({ categories }: { categories: ItemCategory[] }) {
   return (
@@ -7,9 +7,9 @@ export default function ItemTable({ categories }: { categories: ItemCategory[] }
         <tr><th>種別</th><th>アイテム</th></tr>
       </thead>
       <tbody>
-        {categories.map((cat) => (
-          <tr key={cat.label}>
-            <td style={{ whiteSpace: 'nowrap', fontWeight: 'bold' }}>{cat.label}</td>
+        {categories.map((cat, i) => (
+          <tr key={cat.label ?? cat.category ?? i}>
+            <td style={{ whiteSpace: 'nowrap', fontWeight: 'bold' }}>{cat.label ?? cat.category}</td>
             <td>{cat.items.join(' / ')}</td>
           </tr>
         ))}

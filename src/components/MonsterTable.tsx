@@ -26,9 +26,10 @@ type Monster = {
   floors: string
   hp: number
   atk: number
-  def: number
+  def?: number
   exp?: number
   special?: string
+  notes?: string
   drop?: string
   heart?: string
   recruitRate?: number
@@ -36,9 +37,11 @@ type Monster = {
 }
 
 export default function MonsterTable({ monsters }: { monsters: Monster[] }) {
+  const hasDef = monsters.some(m => m.def !== undefined)
   const hasHeart = monsters.some(m => m.heart !== undefined)
   const hasExp = monsters.some(m => m.exp !== undefined)
   const hasSpecial = monsters.some(m => m.special !== undefined)
+  const hasNotes = monsters.some(m => m.notes !== undefined)
 
   return (
     <table style={{ tableLayout: 'auto', width: 'auto' }}>
@@ -48,9 +51,10 @@ export default function MonsterTable({ monsters }: { monsters: Monster[] }) {
           <th>出現階層</th>
           <th>HP</th>
           <th>攻撃力</th>
-          <th>防御力</th>
+          {hasDef && <th>防御力</th>}
           {hasExp && <th>経験値</th>}
           {hasSpecial && <th style={{ maxWidth: '200px' }}>特殊能力</th>}
+          {hasNotes && <th style={{ maxWidth: '250px' }}>備考</th>}
           {hasHeart ? (
             <>
               <th>心ドロップ</th>
@@ -71,9 +75,10 @@ export default function MonsterTable({ monsters }: { monsters: Monster[] }) {
             <td style={{ whiteSpace: 'nowrap' }}>{m.floors}</td>
             <td>{m.hp}</td>
             <td>{m.atk}</td>
-            <td>{m.def}</td>
+            {hasDef && <td>{m.def ?? ''}</td>}
             {hasExp && <td>{m.exp ?? ''}</td>}
             {hasSpecial && <td style={{ maxWidth: '200px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.special ?? ''}</td>}
+            {hasNotes && <td style={{ maxWidth: '250px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.notes ?? ''}</td>}
             {hasHeart ? (
               <>
                 <td>{m.heart ?? ''}</td>

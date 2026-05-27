@@ -3,13 +3,14 @@
   floors: string
   hp: number
   atk: number
-  def: number
+  def?: number
   exp?: number
   special?: string
+  notes?: string
   drop?: string
 }
 
-type ItemCategory = { label: string; items: string[] }
+type ItemCategory = { label?: string; category?: string; items: string[] }
 
 type DungeonData = {
   name: string
@@ -17,6 +18,8 @@ type DungeonData = {
   monsters: Monster[]
   itemCategories: ItemCategory[]
   traps?: string[]
+  statues?: string[]
+  treasureRooms?: { floor: number; description: string }[]
   strategy: string
 }
 
