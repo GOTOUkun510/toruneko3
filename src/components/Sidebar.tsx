@@ -58,7 +58,7 @@ export default function Sidebar() {
     `hover:text-white transition-colors ${pathname === href ? 'text-white font-bold' : 'text-gray-400'}`
 
   return (
-    <div className="fixed top-0 left-0 h-full w-[150px] bg-[#111] border-r border-[#333] flex flex-col py-3 z-50 overflow-y-auto scrollbar-hide">
+    <div className="fixed top-0 left-0 h-full w-[160px] bg-[#111] border-r border-[#333] flex flex-col py-3 z-50 overflow-y-auto scrollbar-hide">
       <div className="px-4 mb-2">
         <Link href="/" className="text-white font-bold text-xs hover:text-gray-300 transition-colors block">トルネコの大冒険3<br />攻略wiki MOD</Link>
       </div>
