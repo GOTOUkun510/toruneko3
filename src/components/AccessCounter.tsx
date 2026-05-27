@@ -40,12 +40,11 @@ export default function AccessCounter() {
   if (!stats) return null
 
   return (
-    <div className="px-3 pb-2 text-[10px] text-gray-400 border-b border-[#333] mb-2">
-      <div>合計：{stats.total.toLocaleString()}</div>
-      <div>今日：{stats.today.toLocaleString()}</div>
-      <div>昨日：{stats.yesterday.toLocaleString()}</div>
-      <div>トップの合計：{stats.topTotal.toLocaleString()}</div>
-      <div>オンライン：{stats.online}</div>
+    <div className="px-3 pb-2 text-[14px] text-gray-400 border-b border-[#333] mb-2">
+      <div>今日 {stats.today.toLocaleString()}　昨日 {stats.yesterday.toLocaleString()}</div>
+      <div>合計 {stats.total.toLocaleString()}</div>
+      <div>トップの合計 {stats.topTotal.toLocaleString()}</div>
+      <div>オンライン {stats.online}</div>
     </div>
   )
 }
