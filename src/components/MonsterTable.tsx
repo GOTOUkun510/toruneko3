@@ -3,7 +3,7 @@
 import { useState } from 'react'
 
 function getImageName(name: string): string {
-  return name.replace(/^Lv\d+\s*/, '')
+  return name.replace(/^Lv\d+\s*/, '').replace(/Lv\d+$/, '').trim()
 }
 
 function MonsterName({ name }: { name: string }) {
