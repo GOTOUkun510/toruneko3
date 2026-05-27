@@ -16,7 +16,7 @@ function getDungeonFloors(monsters: { floors: string }[]): string {
 export default async function DungeonPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const data = dungeonData[id]
-  if (!data) return <div><h1>ダンジョンが見つかりません</h1></div>
+  if (!data) return <div><h1>ダンジョンが見つかりませんw</h1></div>
 
   const floors = getDungeonFloors(data.monsters)
 
