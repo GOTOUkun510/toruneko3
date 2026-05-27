@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+﻿import { NextRequest, NextResponse } from 'next/server'
 import { Redis } from '@upstash/redis'
 
 const redis = new Redis({
@@ -6,8 +6,7 @@ const redis = new Redis({
   token: process.env.KV_REST_API_TOKEN!,
 })
 
-const ONLINE_TIMEOUT = 5 * 60 // 5分（秒）
-
+const ONLINE_TIMEOUT = 5 * 60 // 5min
 function getJstDateString(): string {
   const now = new Date()
   const jst = new Date(now.getTime() + 9 * 60 * 60 * 1000)
@@ -16,12 +15,14 @@ function getJstDateString(): string {
 
 export async function GET() {
   const today = getJstDateString()
+  const now = Math.floor(Date.now() / 1000)
+  await redis.zremrangebyscore('counter:online', 0, now - ONLINE_TIMEOUT)
   const [total, topTotal, todayCount, yesterday, online] = await Promise.all([
     redis.get<number>('counter:total'),
     redis.get<number>('counter:topTotal'),
     redis.get<number>(`counter:day:${today}`),
     redis.get<number>('counter:yesterday'),
-    redis.zcount('counter:online', Date.now() / 1000 - ONLINE_TIMEOUT, '+inf'),
+    redis.zcount('counter:online', now - ONLINE_TIMEOUT, '+inf'),
   ])
   return NextResponse.json({
     total: total ?? 0,
@@ -37,8 +38,7 @@ export async function POST(req: NextRequest) {
   const today = getJstDateString()
   const now = Math.floor(Date.now() / 1000)
 
-  // 日付切り替え処理
-  const lastDate = await redis.get<string>('counter:lastDate')
+  // 譌･莉伜・繧頑崛縺亥・逅・  const lastDate = await redis.get<string>('counter:lastDate')
   if (lastDate !== today) {
     const prevCount = await redis.get<number>(`counter:day:${lastDate}`)
     await Promise.all([
@@ -71,3 +71,4 @@ export async function POST(req: NextRequest) {
     online,
   })
 }
+
