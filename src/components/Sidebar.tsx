@@ -59,9 +59,10 @@ export default function Sidebar() {
 
   return (
     <div className="fixed top-0 left-0 h-full w-[160px] bg-[#111] border-r border-[#333] flex flex-col py-3 z-50 overflow-y-auto scrollbar-hide">
-      <div className="px-4 mb-4">
+      <div className="px-4 mb-2">
         <Link href="/" className="text-white font-bold text-xs hover:text-gray-300 transition-colors block">トルネコの大冒険3<br />攻略wiki MOD</Link>
       </div>
+      <AccessCounter />
       <nav className="flex flex-col px-2">
         {links.map(link => (
           <Link key={link.href} href={link.href} className={`px-3 py-1 rounded text-xs ${navClass(link.href)}`}>{link.label}</Link>
@@ -101,7 +102,6 @@ export default function Sidebar() {
           <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`}>{link.label}</Link>
         ))}
       </nav>
-      <AccessCounter />
     </div>
   )
 }
