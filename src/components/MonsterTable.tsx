@@ -1,23 +1,21 @@
 'use client'
 
-import { useState } from 'react'
 
 function getImageName(name: string): string {
   return name.replace(/^Lv\d+\s*/, '').replace(/Lv\d+$/, '').trim()
 }
 
 function MonsterName({ name }: { name: string }) {
-  const [imgError, setImgError] = useState(false)
+  const imgName = getImageName(name)
   return (
     <span style={{ display: 'inline-flex', alignItems: 'flex-start', gap: '6px', whiteSpace: 'nowrap' }}>
-      {!imgError && (
-        <img
-          src={`/monsters/${getImageName(name)}.jpg`}
-          alt={name}
-          style={{ width: 60, height: 60, objectFit: 'contain', objectPosition: 'bottom', display: 'block' }}
-          onError={() => setImgError(true)}
-        />
-      )}
+      <img
+        key={imgName}
+        src={`/monsters/${imgName}.jpg`}
+        alt=""
+        style={{ width: 60, height: 60, objectFit: 'contain', objectPosition: 'bottom', display: 'block' }}
+        onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
+      />
       {name}
     </span>
   )
