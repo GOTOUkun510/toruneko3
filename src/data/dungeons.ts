@@ -12,6 +12,19 @@
 
 type ItemCategory = { label?: string; category?: string; items: string[] }
 
+type HeartInfo = {
+  monsterName: string
+  heartName?: string
+  recruitRate?: number
+  clawChance?: string
+}
+
+type ModContent = {
+  additionalItems?: string[]
+  additionalMonsters?: Monster[]
+  hearts?: HeartInfo[]
+}
+
 type DungeonData = {
   name: string
   description: string
@@ -21,6 +34,7 @@ type DungeonData = {
   statues?: string[]
   treasureRooms?: { floor: number; description: string }[]
   strategy: string
+  modContent?: ModContent
 }
 
 export const dungeonData: Record<string, DungeonData> = {

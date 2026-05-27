@@ -37,6 +37,55 @@ export default async function DungeonPage({ params }: { params: Promise<{ id: st
           <tbody><tr><td>{data.traps.join(' / ')}</td></tr></tbody>
         </table>
       )}
+      {data.modContent && (
+        <div style={{ padding: '0 2rem' }}>
+          <h2 className="text-2xl font-bold" style={{ margin: '1.5rem 0 1rem' }}>MOD</h2>
+          {data.modContent.additionalItems && data.modContent.additionalItems.length > 0 && (
+            <div style={{ marginBottom: '1rem' }}>
+              <h3 className="text-xl font-semibold" style={{ marginBottom: '0.5rem' }}>追加アイテム</h3>
+              <table style={{ tableLayout: 'auto', width: 'auto' }}>
+                <thead><tr><th>アイテム名</th></tr></thead>
+                <tbody>
+                  {data.modContent.additionalItems.map((item, i) => (
+                    <tr key={i}><td>{item}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+          {data.modContent.additionalMonsters && data.modContent.additionalMonsters.length > 0 && (
+            <div style={{ marginBottom: '1rem' }}>
+              <h3 className="text-xl font-semibold" style={{ marginBottom: '0.5rem' }}>追加モンスター</h3>
+              <MonsterTable monsters={data.modContent.additionalMonsters} />
+            </div>
+          )}
+          {data.modContent.hearts && data.modContent.hearts.length > 0 && (
+            <div style={{ marginBottom: '1rem' }}>
+              <h3 className="text-xl font-semibold" style={{ marginBottom: '0.5rem' }}>モンスターのこころ</h3>
+              <table style={{ tableLayout: 'auto', width: 'auto' }}>
+                <thead>
+                  <tr>
+                    <th>モンスター名</th>
+                    <th>こころ名</th>
+                    <th>勧誘率</th>
+                    <th>ポポロLv1魔法の爪</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.modContent.hearts.map((h, i) => (
+                    <tr key={i}>
+                      <td>{h.monsterName}</td>
+                      <td>{h.heartName ?? ''}</td>
+                      <td>{h.recruitRate !== undefined ? h.recruitRate : ''}</td>
+                      <td>{h.clawChance ?? ''}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+      )}
       <div style={{ padding: '0 2rem 2rem' }}>
         <p>{data.strategy}</p>
       </div>
