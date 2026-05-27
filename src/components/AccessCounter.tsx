@@ -37,14 +37,12 @@ export default function AccessCounter() {
       .catch(() => {})
   }, [pathname])
 
-  if (!stats) return null
-
   return (
     <div className="px-3 pb-2 text-[16px] text-gray-400 border-b border-[#333] mb-2">
-      <div>今日 {stats.today.toLocaleString()}　昨日 {stats.yesterday.toLocaleString()}</div>
-      <div>合計 {stats.total.toLocaleString()}</div>
-      <div>トップの合計 {stats.topTotal.toLocaleString()}</div>
-      <div>オンライン {stats.online}</div>
+      <div>今日 {stats ? stats.today.toLocaleString() : '…'}　昨日 {stats ? stats.yesterday.toLocaleString() : '…'}</div>
+      <div>合計 {stats ? stats.total.toLocaleString() : '…'}</div>
+      <div>トップの合計 {stats ? stats.topTotal.toLocaleString() : '…'}</div>
+      <div>オンライン {stats ? stats.online : '…'}</div>
     </div>
   )
 }
