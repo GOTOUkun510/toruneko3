@@ -39,12 +39,7 @@ export default function AccessCounter() {
   useEffect(() => {
     const cache = loadCache()
     if (cache) {
-      setStats({
-        ...cache,
-        today: cache.today + 1,
-        total: cache.total + 1,
-        online: cache.online,
-      })
+      setStats(cache)
     }
 
     // セッション内で1回だけカウント
