@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import AccessCounter from './AccessCounter'
@@ -95,7 +95,7 @@ export default function Sidebar() {
           <br />
           <Link href="/mod/spellbook" className={navClass('/mod/spellbook')}>スペルブック</Link>
           <br />
-          <Link href="/mod/slime-ring" className={navClass('/mod/slime-ring')}>スライムの指輪の効果</Link>
+          <Link href="/mod/slime-ring" className={navClass('/mod/slime-ring')}>スライムの指輪</Link>
           <br />
           <Link href="/mod/shinzui-ring" className={navClass('/mod/shinzui-ring')}>魔物の心髄 指輪表</Link>
         </div>
