@@ -2,7 +2,7 @@
 
 
 function getImageName(name: string): string {
-  return name.replace(/^Lv\d+\s*/, '').replace(/Lv\d+$/, '').trim()
+  return name.replace(/^[Ｌｖlv]{2}[０-９\d]+\s*/, '').replace(/[Ｌｖlv]{2}[０-９\d]+$/, '').trim()
 }
 
 function MonsterName({ name }: { name: string }) {
