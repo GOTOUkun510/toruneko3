@@ -10,6 +10,8 @@ type CounterStats = {
   online: number
 }
 
+const CACHE_KEY = 'access_counter_cache'
+
 function getOrCreateSessionId(): string {
   let id = sessionStorage.getItem('sid')
   if (!id) {
@@ -19,11 +21,32 @@ function getOrCreateSessionId(): string {
   return id
 }
 
+function loadCache(): CounterStats | null {
+  try {
+    const s = localStorage.getItem(CACHE_KEY)
+    return s ? JSON.parse(s) : null
+  } catch { return null }
+}
+
+function saveCache(stats: CounterStats) {
+  try { localStorage.setItem(CACHE_KEY, JSON.stringify(stats)) } catch {}
+}
+
 export default function AccessCounter() {
   const pathname = usePathname()
   const [stats, setStats] = useState<CounterStats | null>(null)
 
   useEffect(() => {
+    const cache = loadCache()
+    if (cache) {
+      setStats({
+        ...cache,
+        today: cache.today + 1,
+        total: cache.total + 1,
+        online: cache.online,
+      })
+    }
+
     const isTop = pathname === '/'
     const sessionId = getOrCreateSessionId()
 
@@ -33,7 +56,10 @@ export default function AccessCounter() {
       body: JSON.stringify({ isTop, sessionId }),
     })
       .then(r => r.json())
-      .then(setStats)
+      .then((data: CounterStats) => {
+        setStats(data)
+        saveCache(data)
+      })
       .catch(() => {})
   }, [pathname])
 
