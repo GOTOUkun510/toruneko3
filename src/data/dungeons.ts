@@ -49,7 +49,7 @@ export const dungeonData: Record<string, DungeonData> = {
   '26': { name: '異世界の迷宮',        description: '', monsters: [], itemCategories: [], strategy: '' },
   '27': { name: '不思議の宝物庫',      description: '', monsters: [], itemCategories: [], strategy: '' },
   '28': { name: 'まぼろしの洞くつ',    description: '', monsters: [], itemCategories: [], strategy: '' },
-  '29': { name: '孤島のほら穴',        description: '', monsters: [], itemCategories: [], strategy: '' },
+  '29': { name: '孤島のほら穴', description: 'クリア後は謎のほら穴や魔物のほら穴に代わり、このダンジョンがバリナボ島に出現するようになる。大したアイテムもなく何もないダンジョンかと思いきや、ごくまれにメタルスライムやはぐれメタルが出没する。見つけたらうまく倒してアイテムをせしめたい。', monsters: [{ name: 'スライム', floors: '1F〜2F', hp: 5, atk: 2, def: 2, exp: 2 }, { name: 'スライムベス', floors: '1F〜2F', hp: 6, atk: 3, def: 3, exp: 3 }, { name: 'Lv9ミミック', floors: '1F〜2F', hp: 71, atk: 32, def: 27, exp: 30, special: 'アイテムに化けて待ち伏せ' }, { name: 'メタルスライム', floors: '1F〜2F', hp: 6, atk: 10, def: 100, exp: 100, special: '常に逃走・薬草を落とす' }, { name: 'はぐれメタル', floors: '1F〜2F', hp: 5, atk: 10, def: 200, exp: 200, special: 'しあわせのたねを落とす・常に逃走' }], itemCategories: [{ label: 'その他', items: ['きれいな指輪', 'ゴールド', 'ミミック'] }], traps: [], strategy: 'ごくまれにメタルスライムやはぐれメタルが出没する。見つけたらうまく倒してアイテムをせしめたい。' },
   '30': { name: '化石のほら穴',        description: '', monsters: [], itemCategories: [], strategy: '' },
   '31': { name: '魔物の巣',            description: '', monsters: [], itemCategories: [], strategy: '' },
 }
