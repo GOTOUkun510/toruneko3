@@ -47,6 +47,19 @@ export default function AccessCounter() {
       })
     }
 
+    // セッション内で1回だけカウント
+    if (sessionStorage.getItem('counted')) {
+      fetch('/api/counter')
+        .then(r => r.json())
+        .then((data: CounterStats) => {
+          setStats(data)
+          saveCache(data)
+        })
+        .catch(() => {})
+      return
+    }
+
+    sessionStorage.setItem('counted', '1')
     const isTop = pathname === '/'
     const sessionId = getOrCreateSessionId()
 
@@ -61,7 +74,8 @@ export default function AccessCounter() {
         saveCache(data)
       })
       .catch(() => {})
-  }, [pathname])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <div className="px-3 pb-2 text-[16px] text-gray-400 border-b border-[#333] mb-2">
