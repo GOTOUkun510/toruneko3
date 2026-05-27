@@ -1,7 +1,6 @@
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import AccessCounter from './AccessCounter'
 
 const links = [
   { href: '/', label: '🏠 ホーム' },
@@ -101,7 +100,6 @@ export default function Sidebar() {
           <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`}>{link.label}</Link>
         ))}
       </nav>
-      <AccessCounter />
     </div>
   )
 }
