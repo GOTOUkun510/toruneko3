@@ -83,9 +83,24 @@ export default function Sidebar() {
           <Link href="/item/staff" className={navClass('/item/staff')}>杖 / </Link>
           <Link href="/item/pot" className={navClass('/item/pot')}>壷 / </Link>
           <Link href="/item/other" className={navClass('/item/other')}>その他</Link>
-          <br />
-          <Link href="/item/heart" className={navClass('/item/heart')}>モンスターのこころ</Link>
         </div>
+
+        <div className="px-3 pt-2 pb-1 text-xs text-gray-600">MOD</div>
+        <div className="px-3 text-xs leading-5">
+          <Link href="/mod/item" className={navClass('/mod/item')}>追加アイテム</Link>
+          <br />
+          <Link href="/mod/monster" className={navClass('/mod/monster')}>追加モンスター</Link>
+          <br />
+          <Link href="/mod/heart" className={navClass('/mod/heart')}>モンスターのこころ</Link>
+          <br />
+          <Link href="/mod/spellbook" className={navClass('/mod/spellbook')}>スペルブック</Link>
+          <br />
+          <Link href="/mod/slime-ring" className={navClass('/mod/slime-ring')}>スライムの指輪の効果</Link>
+          <br />
+          <Link href="/mod/shinzui-ring" className={navClass('/mod/shinzui-ring')}>魔物の心髄 指輪表</Link>
+        </div>
+
+      
 
         <div className="px-3 pt-2 pb-1 text-xs text-gray-600">追加ダンジョン</div>
         {extraDungeonLinks.map(link => (
