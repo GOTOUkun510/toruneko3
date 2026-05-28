@@ -1,6 +1,7 @@
-﻿'use client'
+'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useState } from 'react'
 import AccessCounter from './AccessCounter'
 
 const links = [
@@ -54,69 +55,100 @@ const dungeonLinks = [
 
 export default function Sidebar() {
   const pathname = usePathname()
+  const [open, setOpen] = useState(false)
   const navClass = (href: string) =>
     `hover:text-white transition-colors ${pathname === href ? 'text-white font-bold' : 'text-gray-400'}`
 
-  return (
-    <div className="fixed top-0 left-0 h-full w-[160px] bg-[#111] border-r border-[#333] flex flex-col py-3 z-50 overflow-y-auto scrollbar-hide">
+  const sidebarContent = (
+    <>
       <div className="px-4 mb-2">
-        <Link href="/" className="text-white font-bold text-xs hover:text-gray-300 transition-colors block">トルネコの大冒険3<br />攻略wiki MOD</Link>
+        <Link href="/" className="text-white font-bold text-xs hover:text-gray-300 transition-colors block" onClick={() => setOpen(false)}>トルネコの大冒険3<br />攻略wiki MOD</Link>
       </div>
       <AccessCounter />
       <nav className="flex flex-col px-2">
         {links.map(link => (
-          <Link key={link.href} href={link.href} className={`px-3 py-1 rounded text-xs ${navClass(link.href)}`}>{link.label}</Link>
+          <Link key={link.href} href={link.href} className={`px-3 py-1 rounded text-xs ${navClass(link.href)}`} onClick={() => setOpen(false)}>{link.label}</Link>
         ))}
 
         <div className="mx-2 mt-3 mb-1 px-2 py-0.5 text-xs text-gray-200 text-center bg-[#2a2a4a] rounded">アイテム</div>
         <div className="px-3 text-xs leading-5">
-          <Link href="/item/weapon" className={navClass('/item/weapon')}>武器 / </Link>
-          <Link href="/item/claw" className={navClass('/item/claw')}>爪 / </Link>
-          <Link href="/item/shield" className={navClass('/item/shield')}>盾 / </Link>
-          <Link href="/item/ring" className={navClass('/item/ring')}>指輪</Link>
+          <Link href="/item/weapon" className={navClass('/item/weapon')} onClick={() => setOpen(false)}>武器 / </Link>
+          <Link href="/item/claw" className={navClass('/item/claw')} onClick={() => setOpen(false)}>爪 / </Link>
+          <Link href="/item/shield" className={navClass('/item/shield')} onClick={() => setOpen(false)}>盾 / </Link>
+          <Link href="/item/ring" className={navClass('/item/ring')} onClick={() => setOpen(false)}>指輪</Link>
           <br />
-          <Link href="/item/arrow" className={navClass('/item/arrow')}>矢 / </Link>
-          <Link href="/item/food" className={navClass('/item/food')}>パン / </Link>
-          <Link href="/item/grass" className={navClass('/item/grass')}>草</Link>
+          <Link href="/item/arrow" className={navClass('/item/arrow')} onClick={() => setOpen(false)}>矢 / </Link>
+          <Link href="/item/food" className={navClass('/item/food')} onClick={() => setOpen(false)}>パン / </Link>
+          <Link href="/item/grass" className={navClass('/item/grass')} onClick={() => setOpen(false)}>草</Link>
           <br />
-          <Link href="/item/scroll" className={navClass('/item/scroll')}>巻物 / </Link>
-          <Link href="/item/staff" className={navClass('/item/staff')}>杖 / </Link>
-          <Link href="/item/pot" className={navClass('/item/pot')}>壷 / </Link>
-          <Link href="/item/other" className={navClass('/item/other')}>その他</Link>
+          <Link href="/item/scroll" className={navClass('/item/scroll')} onClick={() => setOpen(false)}>巻物 / </Link>
+          <Link href="/item/staff" className={navClass('/item/staff')} onClick={() => setOpen(false)}>杖 / </Link>
+          <Link href="/item/pot" className={navClass('/item/pot')} onClick={() => setOpen(false)}>壷 / </Link>
+          <Link href="/item/other" className={navClass('/item/other')} onClick={() => setOpen(false)}>その他</Link>
         </div>
 
         <div className="mx-2 mt-3 mb-1 px-2 py-0.5 text-xs text-gray-200 text-center bg-[#2a2a4a] rounded">MOD</div>
         <div className="px-3 text-xs leading-5">
-          <Link href="/mod/item" className={navClass('/mod/item')}>追加アイテム</Link>
+          <Link href="/mod/item" className={navClass('/mod/item')} onClick={() => setOpen(false)}>追加アイテム</Link>
           <br />
-          <Link href="/mod/monster" className={navClass('/mod/monster')}>追加モンスター</Link>
+          <Link href="/mod/monster" className={navClass('/mod/monster')} onClick={() => setOpen(false)}>追加モンスター</Link>
           <br />
-          <Link href="/mod/boss" className={navClass('/mod/boss')}>BOSSモンスター</Link>
+          <Link href="/mod/boss" className={navClass('/mod/boss')} onClick={() => setOpen(false)}>BOSSモンスター</Link>
           <br />
-          <Link href="/mod/heart" className={navClass('/mod/heart')}>モンスターのこころ</Link>
+          <Link href="/mod/heart" className={navClass('/mod/heart')} onClick={() => setOpen(false)}>モンスターのこころ</Link>
           <br />
-          <Link href="/mod/spellbook" className={navClass('/mod/spellbook')}>スペルブック</Link>
+          <Link href="/mod/spellbook" className={navClass('/mod/spellbook')} onClick={() => setOpen(false)}>スペルブック</Link>
           <br />
-          <Link href="/mod/slime-ring" className={navClass('/mod/slime-ring')}>スライムの指輪</Link>
+          <Link href="/mod/slime-ring" className={navClass('/mod/slime-ring')} onClick={() => setOpen(false)}>スライムの指輪</Link>
           <br />
-          <Link href="/mod/shinzui-ring" className={navClass('/mod/shinzui-ring')}>魔物の心髄 指輪表</Link>
+          <Link href="/mod/shinzui-ring" className={navClass('/mod/shinzui-ring')} onClick={() => setOpen(false)}>魔物の心髄 指輪表</Link>
         </div>
 
         <div className="mx-2 mt-3 mb-1 px-2 py-0.5 text-xs text-gray-200 text-center bg-[#2a2a4a] rounded">追加ダンジョン</div>
         {extraDungeonLinks.map(link => (
-          <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`}>{link.label}</Link>
+          <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`} onClick={() => setOpen(false)}>{link.label}</Link>
         ))}
 
         <div className="mx-2 mt-3 mb-1 px-2 py-0.5 text-xs text-gray-200 text-center bg-[#2a2a4a] rounded">クリア後ダンジョン</div>
         {clearDungeonLinks.map(link => (
-          <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`}>{link.label}</Link>
+          <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`} onClick={() => setOpen(false)}>{link.label}</Link>
         ))}
 
         <div className="mx-2 mt-3 mb-1 px-2 py-0.5 text-xs text-gray-200 text-center bg-[#2a2a4a] rounded">ダンジョン</div>
         {dungeonLinks.map(link => (
-          <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`}>{link.label}</Link>
+          <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`} onClick={() => setOpen(false)}>{link.label}</Link>
         ))}
       </nav>
-    </div>
+    </>
+  )
+
+  return (
+    <>
+      {/* PC: 常時表示 */}
+      <div className="hidden md:flex fixed top-0 left-0 h-full w-[160px] bg-[#111] border-r border-[#333] flex-col py-3 z-50 overflow-y-auto scrollbar-hide">
+        {sidebarContent}
+      </div>
+
+      {/* スマホ: ハンバーガーボタン */}
+      <div className="md:hidden fixed top-0 left-0 z-50">
+        <button
+          onClick={() => setOpen(!open)}
+          className="m-2 p-2 bg-[#111] border border-[#333] rounded text-white text-lg"
+          aria-label="メニュー"
+        >
+          {open ? '✕' : '☰'}
+        </button>
+      </div>
+
+      {/* スマホ: オーバーレイ */}
+      {open && (
+        <div className="md:hidden fixed inset-0 z-40 bg-black bg-opacity-50" onClick={() => setOpen(false)} />
+      )}
+
+      {/* スマホ: サイドバー */}
+      <div className={`md:hidden fixed top-0 left-0 h-full w-[160px] bg-[#111] border-r border-[#333] flex flex-col py-3 z-50 overflow-y-auto scrollbar-hide transition-transform duration-200 ${open ? 'translate-x-0' : '-translate-x-full'}`}>
+        {sidebarContent}
+      </div>
+    </>
   )
 }
