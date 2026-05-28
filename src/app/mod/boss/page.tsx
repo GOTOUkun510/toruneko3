@@ -6,6 +6,7 @@ export default function BossMonsterPage() {
     { name: '大きめんどうし' },
     { name: 'グラコス' },
     { name: 'ラストキラーマシン' },
+    { name: 'カンダタ' },
   ]
 
   return (
