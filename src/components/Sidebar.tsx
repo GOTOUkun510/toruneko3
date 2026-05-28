@@ -68,7 +68,7 @@ export default function Sidebar() {
           <Link key={link.href} href={link.href} className={`px-3 py-1 rounded text-xs ${navClass(link.href)}`}>{link.label}</Link>
         ))}
 
-        <div className="px-3 pt-2 pb-1 text-xs text-gray-600">アイテム</div>
+        <div className="mx-2 mt-3 mb-1 px-2 py-0.5 text-xs text-gray-200 text-center bg-[#2a2a4a] rounded">アイテム</div>
         <div className="px-3 text-xs leading-5">
           <Link href="/item/weapon" className={navClass('/item/weapon')}>武器 / </Link>
           <Link href="/item/claw" className={navClass('/item/claw')}>爪 / </Link>
@@ -85,11 +85,13 @@ export default function Sidebar() {
           <Link href="/item/other" className={navClass('/item/other')}>その他</Link>
         </div>
 
-        <div className="px-3 pt-2 pb-1 text-xs text-gray-600">MOD</div>
+        <div className="mx-2 mt-3 mb-1 px-2 py-0.5 text-xs text-gray-200 text-center bg-[#2a2a4a] rounded">MOD</div>
         <div className="px-3 text-xs leading-5">
           <Link href="/mod/item" className={navClass('/mod/item')}>追加アイテム</Link>
           <br />
           <Link href="/mod/monster" className={navClass('/mod/monster')}>追加モンスター</Link>
+          <br />
+          <Link href="/mod/boss" className={navClass('/mod/boss')}>BOSSモンスター</Link>
           <br />
           <Link href="/mod/heart" className={navClass('/mod/heart')}>モンスターのこころ</Link>
           <br />
@@ -100,19 +102,17 @@ export default function Sidebar() {
           <Link href="/mod/shinzui-ring" className={navClass('/mod/shinzui-ring')}>魔物の心髄 指輪表</Link>
         </div>
 
-      
-
-        <div className="px-3 pt-2 pb-1 text-xs text-gray-600">追加ダンジョン</div>
+        <div className="mx-2 mt-3 mb-1 px-2 py-0.5 text-xs text-gray-200 text-center bg-[#2a2a4a] rounded">追加ダンジョン</div>
         {extraDungeonLinks.map(link => (
           <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`}>{link.label}</Link>
         ))}
 
-        <div className="px-3 pt-2 pb-1 text-xs text-gray-600">クリア後ダンジョン</div>
+        <div className="mx-2 mt-3 mb-1 px-2 py-0.5 text-xs text-gray-200 text-center bg-[#2a2a4a] rounded">クリア後ダンジョン</div>
         {clearDungeonLinks.map(link => (
           <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`}>{link.label}</Link>
         ))}
 
-        <div className="px-3 pt-2 pb-1 text-xs text-gray-600">ダンジョン</div>
+        <div className="mx-2 mt-3 mb-1 px-2 py-0.5 text-xs text-gray-200 text-center bg-[#2a2a4a] rounded">ダンジョン</div>
         {dungeonLinks.map(link => (
           <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`}>{link.label}</Link>
         ))}

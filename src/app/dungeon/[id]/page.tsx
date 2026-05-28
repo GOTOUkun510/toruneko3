@@ -43,7 +43,7 @@ export default async function DungeonPage({ params }: { params: Promise<{ id: st
           {data.modContent.additionalItems && data.modContent.additionalItems.length > 0 && (
             <div style={{ marginBottom: '1rem' }}>
               <h3 className="text-xl font-semibold" style={{ marginBottom: '0.5rem' }}>追加アイテム</h3>
-              <table style={{ tableLayout: 'auto', width: 'auto' }}>
+              <table>
                 <thead><tr><th>アイテム名</th></tr></thead>
                 <tbody>
                   {data.modContent.additionalItems.map((item, i) => (
@@ -62,7 +62,7 @@ export default async function DungeonPage({ params }: { params: Promise<{ id: st
           {data.modContent.hearts && data.modContent.hearts.length > 0 && (
             <div style={{ marginBottom: '1rem' }}>
               <h3 className="text-xl font-semibold" style={{ marginBottom: '0.5rem' }}>モンスターのこころ</h3>
-              <table style={{ tableLayout: 'auto', width: 'auto' }}>
+              <table>
                 <thead>
                   <tr>
                     <th>モンスター名</th>
