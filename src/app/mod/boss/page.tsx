@@ -8,6 +8,7 @@ export default function BossMonsterPage() {
     { name: 'ラストキラーマシン' },
     { name: 'カンダタ' },
     { name: 'ボルンガ' },
+    { name: 'ゴールデンドラゴン' },
   ]
 
   return (
