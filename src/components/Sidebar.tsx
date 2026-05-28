@@ -1,7 +1,7 @@
-'use client'
+﻿'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import AccessCounter from './AccessCounter'
 
 const links = [
@@ -56,6 +56,7 @@ const dungeonLinks = [
 export default function Sidebar() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  useEffect(() => { setOpen(false) }, [pathname])
   const navClass = (href: string) =>
     `hover:text-white transition-colors ${pathname === href ? 'text-white font-bold' : 'text-gray-400'}`
 
@@ -146,7 +147,7 @@ export default function Sidebar() {
       )}
 
       {/* スマホ: サイドバー */}
-      <div className={`md:hidden fixed top-0 left-0 h-full w-[160px] bg-[#111] border-r border-[#333] flex flex-col py-3 z-50 overflow-y-auto scrollbar-hide transition-transform duration-200 ${open ? 'translate-x-0' : '-translate-x-full'}`}>
+      <div className={`md:hidden fixed top-0 left-0 h-full w-[200px] bg-[#111] border-r border-[#333] flex flex-col pt-14 pb-3 z-50 overflow-y-auto scrollbar-hide transition-transform duration-200 ${open ? 'translate-x-0' : '-translate-x-full'}`}>
         {sidebarContent}
       </div>
     </>
