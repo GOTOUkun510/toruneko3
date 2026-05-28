@@ -6,8 +6,6 @@ import AccessCounter from './AccessCounter'
 
 const links = [
   { href: '/', label: '🏠 ホーム' },
-  { href: '/wiki', label: '📖 Wiki' },
-  { href: '/board', label: '💬 掲示板' },
 ]
 
 const extraDungeonLinks = [
