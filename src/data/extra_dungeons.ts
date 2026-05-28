@@ -1,4 +1,4 @@
-type Monster = {
+﻿type Monster = {
   name: string
   floors: string
   hp: number
@@ -195,7 +195,7 @@ export const extraDungeonData: Record<string, DungeonData> = {
     { name: 'デスペクテル', floors: '88~94', hp: 130, atk: 95, def: 68, heart: 'ピンチワープの心', recruitRate: -75, clawChance: '0%' },
     { name: 'ようじゅつしLv12', floors: '89~94', hp: 73, atk: 29, def: 48, heart: '魔弾反射の心', recruitRate: 15, clawChance: '3.7%' },
     { name: 'アイアンナイト', floors: '89~99', hp: 145, atk: 110, def: 58, heart: '超まもりの心', recruitRate: -5, clawChance: '0%' },
-    { name: 'はがねのきょぞう', floors: '89(91)~99', hp: 180, atk: 110, def: 65, heart: '石像よけの心', recruitRate: -10, clawChance: '0%' },
+    { name: 'はがねのきょぞう', floors: '89~99', hp: 180, atk: 110, def: 65, heart: '石像よけの心', recruitRate: -10, clawChance: '0%' },
     { name: 'メタルスラッシャー', floors: '90~99', hp: 195, atk: 120, def: 73, heart: '魔封じの心', recruitRate: -50, clawChance: '0%' },
     { name: 'メタルドラゴンLv2', floors: '91~99', hp: 185, atk: 99, def: 73, heart: '爆発よけの心', recruitRate: -10, clawChance: '0%' },
     { name: 'デュランダル', floors: '92~99', hp: 200, atk: 95, def: 75, heart: '魔弾反射の心', recruitRate: -100, clawChance: '0%' },
@@ -267,7 +267,7 @@ export const extraDungeonData: Record<string, DungeonData> = {
     { name: 'アロードッグ', floors: '27~34', hp: 66, atk: 22, def: 22, heart: '-' },
     { name: 'かげのきし', floors: '30~34', hp: 85, atk: 30, def: 29, heart: '-' },
     { name: 'スターキメラ', floors: '30~34', hp: 78, atk: 32, def: 31, heart: '-' },
-    { name: 'ホロゴースト', floors: '30~34', hp: 10, atk: 15, def: 1, heart: '-' },
+    { name: 'シルエト', floors: '30~34', hp: 10, atk: 15, def: 1, heart: '-' },
     { name: 'しにがみLv5', floors: '30~34', hp: 46, atk: 23, def: 21, heart: '-' },
     { name: 'メイジドラキー', floors: '30~36', hp: 64, atk: 26, def: 19, heart: '-' },
     { name: 'どくやずきんLv3', floors: '30~36', hp: 65, atk: 19, def: 29, heart: '-' },
