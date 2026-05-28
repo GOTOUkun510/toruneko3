@@ -18,12 +18,20 @@ export default function BossMonsterPage() {
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
         {bosses.map((b) => (
           <div key={b.name} style={{ textAlign: 'center' }}>
-            <img
-              src={`/boss/${b.name}.jpg`}
-              alt={b.name}
-              style={{ width: '50%', height: 'auto' }}
-              onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
-            />
+            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-end' }}>
+              <img
+                src={`/boss/${b.name}.jpg`}
+                alt={b.name}
+                style={{ width: '370px', height: 'auto' }}
+                onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
+              />
+              <img
+                src={`/monsters/${b.name}.jpg`}
+                alt={b.name}
+                style={{ width: 250, height: 250, objectFit: 'contain', objectPosition: 'bottom' }}
+                onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
+              />
+            </div>
             <div style={{ marginTop: '0.5rem', color: '#eee', fontSize: '0.9rem' }}>{b.name}</div>
           </div>
         ))}
