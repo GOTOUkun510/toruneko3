@@ -8,6 +8,7 @@ type CounterStats = {
   today: number
   yesterday: number
   online: number
+  pageCount?: number
 }
 
 const CACHE_KEY = 'access_counter_cache'
@@ -38,30 +39,19 @@ export default function AccessCounter() {
 
   useEffect(() => {
     const cache = loadCache()
-    if (cache) {
-      setStats(cache)
-    }
+    if (cache) setStats(cache)
 
-    // セッション内で1回だけカウント
-    if (sessionStorage.getItem('counted')) {
-      fetch('/api/counter')
-        .then(r => r.json())
-        .then((data: CounterStats) => {
-          setStats(data)
-          saveCache(data)
-        })
-        .catch(() => {})
-      return
-    }
-
-    sessionStorage.setItem('counted', '1')
     const isTop = pathname === '/'
     const sessionId = getOrCreateSessionId()
+
+    // セッション内で合計・今日は1回だけカウント
+    const countSession = !sessionStorage.getItem('session_counted')
+    if (countSession) sessionStorage.setItem('session_counted', '1')
 
     fetch('/api/counter', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ isTop, sessionId }),
+      body: JSON.stringify({ isTop, sessionId, pagePath: pathname, countSession }),
     })
       .then(r => r.json())
       .then((data: CounterStats) => {
@@ -69,14 +59,14 @@ export default function AccessCounter() {
         saveCache(data)
       })
       .catch(() => {})
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [pathname])
 
   return (
     <div className="px-3 pb-2 text-[16px] text-gray-400 border-b border-[#333] mb-2">
       <div>今日 {stats ? stats.today.toLocaleString() : '…'}　昨日 {stats ? stats.yesterday.toLocaleString() : '…'}</div>
       <div>合計 {stats ? stats.total.toLocaleString() : '…'}</div>
       <div>トップの合計 {stats ? stats.topTotal.toLocaleString() : '…'}</div>
+      <div>このページ {stats ? (stats.pageCount ?? 0).toLocaleString() : '…'}</div>
       <div>オンライン {stats ? stats.online : '…'}</div>
     </div>
   )

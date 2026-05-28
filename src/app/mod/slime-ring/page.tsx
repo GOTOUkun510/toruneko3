@@ -27,7 +27,7 @@
   ]
 
   return (
-    <main>
+    <main style={{ padding: "2rem" }}>
       <h1>スライムの指輪の効果</h1>
       <p style={{ color: '#aaa', marginBottom: '0.5rem', fontSize: '0.85rem' }}>
         トルネコ3MOD2のスライムの指輪の効果。

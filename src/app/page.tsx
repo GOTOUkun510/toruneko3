@@ -1,12 +1,17 @@
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#1a1a2e] text-white">
-      <h1 className="text-4xl font-bold">トルネコの大冒険3 攻略wiki MOD</h1>
-      <p className="text-gray-400 mt-4">スマホ対応、モンスター270体画像つき、2026攻略まとめサイト</p>
+      <h1 className="text-4xl font-bold">
+        トルネコの大冒険3 攻略wiki MOD</h1>
+      <p className="text-gray-400 mt-4">
+        スマホ対応、モンスター270体画像つき、2026攻略まとめサイト   
+        </p>
       <div className="mt-10 p-6 bg-[#1e1e2e] border border-[#3a3a5c] rounded-lg text-center max-w-md">
         <p className="text-gray-300 text-sm leading-relaxed">
           このサイトは個人で制作・運営しています。<br />
-          役に立ったらカンパいただけると励みになります。
+          ネット上の攻略サイトを使いやすくまとめた転載サイト<br />
+          役に立ったらカンパいただけると励みになります。<br />
+          2026/5/28作成
         </p>
         <a
           href="https://www.amazon.jp/hz/wishlist/ls/39YE10UQUYE10?ref_=wl_share"

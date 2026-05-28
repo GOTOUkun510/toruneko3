@@ -7,10 +7,10 @@ export async function generateStaticParams() {
 export default async function ItemPage({ params }: { params: Promise<{ category: string }> }) {
   const { category } = await params
   const data = itemData[category]
-  if (!data) return <main><h1>カテゴリが見つかりません</h1></main>
+  if (!data) return <main style={{ padding: '2rem' }}><h1>カテゴリが見つかりません</h1></main>
 
   return (
-    <main>
+    <main style={{ padding: '2rem' }}>
       <h1>{data.label}一覧</h1>
       <table>
         <thead>

@@ -2,7 +2,7 @@
 
 export default function ModHeartPage() {
   return (
-    <main>
+    <main style={{ padding: "2rem" }}>
       <h1>モンスターのこころ</h1>
       <img
         src="/奇跡の心.jpg"

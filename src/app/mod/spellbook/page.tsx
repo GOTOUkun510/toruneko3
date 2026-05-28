@@ -25,7 +25,7 @@
   ]
 
   return (
-    <main>
+    <main style={{ padding: "2rem" }}>
       <h1>スペルブックの呪文一覧</h1>
       <p style={{ color: '#aaa', marginBottom: '1rem', fontSize: '0.85rem' }}>
         トルネコ3MOD2のスペルブックに書き込まれる呪文の調査データです。

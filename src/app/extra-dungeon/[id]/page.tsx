@@ -25,18 +25,22 @@ export default async function ExtraDungeonPage({ params }: { params: Promise<{ i
   const floors = getDungeonFloors(data.monsters)
 
   return (
-    <main>
-      <div className="flex items-baseline gap-4 mb-4">
-        <h1 className="text-3xl font-bold">{data.name}</h1>
-        {floors && <span className="text-gray-400">{floors}</span>}
+    <div>
+      <div style={{ padding: '2rem 2rem 0' }}>
+        <div className="flex items-baseline gap-4 mb-4">
+          <h1 className="text-3xl font-bold">{data.name}</h1>
+          {floors && <span className="text-gray-400">{floors}</span>}
+        </div>
+        <p>{data.description}</p>
+        {id === '1' && (
+          <p style={{ color: '#aaa', fontSize: '0.85rem', margin: '0.5rem 0 1rem' }}>モンスターハウス: 35F / 45F / 65F / 75F / 85F / 95F</p>
+        )}
       </div>
-      <p>{data.description}</p>
-      {id === '1' && (
-        <p style={{ color: '#aaa', fontSize: '0.85rem', margin: '0.5rem 0 1rem' }}>モンスターハウス: 35F / 45F / 65F / 75F / 85F / 95F</p>
-      )}
       <MonsterTable monsters={data.monsters} />
       <ItemTable categories={data.itemCategories} />
-      <p>{data.strategy}</p>
-    </main>
+      <div style={{ padding: '0 2rem 2rem' }}>
+        <p>{data.strategy}</p>
+      </div>
+    </div>
   )
 }

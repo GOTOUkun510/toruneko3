@@ -1,4 +1,4 @@
-﻿import { NextRequest, NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { Redis } from '@upstash/redis'
 
 const redis = new Redis({
@@ -34,7 +34,7 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
-  const { isTop, sessionId } = await req.json()
+  const { isTop, sessionId, pagePath, countSession } = await req.json()
   const today = getJstDateString()
   const now = Math.floor(Date.now() / 1000)
 
@@ -48,20 +48,30 @@ export async function POST(req: NextRequest) {
     ])
   }
 
-  await Promise.all([
-    redis.incr('counter:total'),
-    redis.incr(`counter:day:${today}`),
-    isTop ? redis.incr('counter:topTotal') : Promise.resolve(),
+  const pageKey = `counter:page:${pagePath.replace(/\//g, '_')}`
+
+  const tasks = [
     redis.zadd('counter:online', { score: now, member: sessionId }),
     redis.zremrangebyscore('counter:online', 0, now - ONLINE_TIMEOUT),
-  ])
+    redis.incr(pageKey),
+  ]
 
-  const [total, topTotal, todayCount, yesterday, online] = await Promise.all([
+  // 合計・今日はセッション初回のみカウント
+  if (countSession) {
+    tasks.push(redis.incr('counter:total') as Promise<unknown>)
+    tasks.push(redis.incr(`counter:day:${today}`) as Promise<unknown>)
+    if (isTop) tasks.push(redis.incr('counter:topTotal') as Promise<unknown>)
+  }
+
+  await Promise.all(tasks)
+
+  const [total, topTotal, todayCount, yesterday, online, pageCount] = await Promise.all([
     redis.get<number>('counter:total'),
     redis.get<number>('counter:topTotal'),
     redis.get<number>(`counter:day:${today}`),
     redis.get<number>('counter:yesterday'),
     redis.zcount('counter:online', now - ONLINE_TIMEOUT, '+inf'),
+    redis.get<number>(pageKey),
   ])
 
   return NextResponse.json({
@@ -70,6 +80,6 @@ export async function POST(req: NextRequest) {
     today: todayCount ?? 0,
     yesterday: yesterday ?? 0,
     online,
+    pageCount: pageCount ?? 0,
   })
 }
-

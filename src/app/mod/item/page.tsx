@@ -2,7 +2,7 @@
 
 export default function ModItemPage() {
   return (
-    <main>
+    <main style={{ padding: "2rem" }}>
       <h1>追加アイテム一覧</h1>
       <p style={{ marginBottom: '1rem', color: '#aaa' }}>トルネコ3MOD2に登場する追加アイテム。(Ver0.2.x)</p>
       <table>
