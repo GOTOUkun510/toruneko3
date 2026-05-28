@@ -1,4 +1,8 @@
-﻿import { itemData } from '@/data/items'
+import { itemData } from '@/data/items'
+
+export async function generateStaticParams() {
+  return Object.keys(itemData).map((category) => ({ category }))
+}
 
 export default async function ItemPage({ params }: { params: Promise<{ category: string }> }) {
   const { category } = await params

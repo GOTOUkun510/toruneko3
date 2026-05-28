@@ -1,6 +1,10 @@
-﻿import { dungeonData } from '@/data/dungeons'
+import { dungeonData } from '@/data/dungeons'
 import MonsterTable from '@/components/MonsterTable'
 import ItemTable from '@/components/ItemTable'
+
+export async function generateStaticParams() {
+  return Object.keys(dungeonData).map((id) => ({ id }))
+}
 
 function getDungeonFloors(monsters: { floors: string }[]): string {
   if (monsters.length === 0) return ''
