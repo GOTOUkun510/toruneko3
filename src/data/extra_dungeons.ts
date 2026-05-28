@@ -294,7 +294,7 @@ export const extraDungeonData: Record<string, DungeonData> = {
     { name: 'ばくだん岩Lv5', floors: '45~50', hp: 126, atk: 23, def: 23, heart: '-' },
     { name: 'フライングデビル', floors: '47~49', hp: 130, atk: 40, def: 40, heart: '-' },
     { name: 'プラチナキング', floors: '50~50', hp: 134, atk: 52, def: 52, heart: '-' },
-    { name: 'ホークマン', floors: '50~60', hp: 125, atk: 55, def: 40, heart: '-' },
+    { name: 'ホークマン', floors: '50,56~60', hp: 125, atk: 55, def: 40, heart: '-' },
     { name: 'プラズママウスLv6', floors: '50~55', hp: 6, atk: 40, def: 19, heart: '-' },
     { name: 'ディープバイター', floors: '51~55', hp: 232, atk: 83, def: 42, heart: '-' },
     { name: 'うみうし', floors: '51~55', hp: 88, atk: 35, def: 26, heart: '-' },
