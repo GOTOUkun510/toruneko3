@@ -4,6 +4,7 @@ export default function BossMonsterPage() {
     { name: 'ビッグハンマー' },
     { name: 'スカルマスター' },
     { name: '大きめんどうし' },
+    { name: 'グラコス' },
   ]
 
   return (
