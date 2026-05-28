@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
@@ -69,6 +69,16 @@ export default function Sidebar() {
           <Link key={link.href} href={link.href} className={`px-3 py-1 rounded text-xs ${navClass(link.href)}`} onClick={() => setOpen(false)}>{link.label}</Link>
         ))}
 
+        <div className="mx-2 mt-3 mb-1 px-2 py-0.5 text-xs text-gray-200 text-center bg-[#2a2a4a] rounded">追加ダンジョン</div>
+        {extraDungeonLinks.map(link => (
+          <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`} onClick={() => setOpen(false)}>{link.label}</Link>
+        ))}
+
+        <div className="mx-2 mt-3 mb-1 px-2 py-0.5 text-xs text-gray-200 text-center bg-[#2a2a4a] rounded">クリア後ダンジョン</div>
+        {clearDungeonLinks.map(link => (
+          <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`} onClick={() => setOpen(false)}>{link.label}</Link>
+        ))}
+
         <div className="mx-2 mt-3 mb-1 px-2 py-0.5 text-xs text-gray-200 text-center bg-[#2a2a4a] rounded">アイテム</div>
         <div className="px-3 text-xs leading-5">
           <Link href="/item/weapon" className={navClass('/item/weapon')} onClick={() => setOpen(false)}>武器 / </Link>
@@ -102,16 +112,6 @@ export default function Sidebar() {
           <br />
           <Link href="/mod/shinzui-ring" className={navClass('/mod/shinzui-ring')} onClick={() => setOpen(false)}>魔物の心髄 指輪表</Link>
         </div>
-
-        <div className="mx-2 mt-3 mb-1 px-2 py-0.5 text-xs text-gray-200 text-center bg-[#2a2a4a] rounded">追加ダンジョン</div>
-        {extraDungeonLinks.map(link => (
-          <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`} onClick={() => setOpen(false)}>{link.label}</Link>
-        ))}
-
-        <div className="mx-2 mt-3 mb-1 px-2 py-0.5 text-xs text-gray-200 text-center bg-[#2a2a4a] rounded">クリア後ダンジョン</div>
-        {clearDungeonLinks.map(link => (
-          <Link key={link.href} href={link.href} className={`px-3 py-0.5 rounded text-xs ${navClass(link.href)}`} onClick={() => setOpen(false)}>{link.label}</Link>
-        ))}
 
         <div className="mx-2 mt-3 mb-1 px-2 py-0.5 text-xs text-gray-200 text-center bg-[#2a2a4a] rounded">ダンジョン</div>
         {dungeonLinks.map(link => (
