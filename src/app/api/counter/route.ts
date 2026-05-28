@@ -38,7 +38,8 @@ export async function POST(req: NextRequest) {
   const today = getJstDateString()
   const now = Math.floor(Date.now() / 1000)
 
-  // 譌･莉伜・繧頑崛縺亥・逅・  const lastDate = await redis.get<string>('counter:lastDate')
+  // 日付切替処理
+  const lastDate = await redis.get<string>('counter:lastDate')
   if (lastDate !== today) {
     const prevCount = await redis.get<number>(`counter:day:${lastDate}`)
     await Promise.all([
