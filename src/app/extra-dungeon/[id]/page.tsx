@@ -1,4 +1,4 @@
-import { extraDungeonData } from '@/data/extra_dungeons'
+﻿import { extraDungeonData } from '@/data/extra_dungeons'
 import MonsterTable from '@/components/MonsterTable'
 import ItemTable from '@/components/ItemTable'
 
@@ -27,6 +27,9 @@ export default async function ExtraDungeonPage({ params }: { params: Promise<{ i
         {floors && <span className="text-gray-400">{floors}</span>}
       </div>
       <p>{data.description}</p>
+      {id === '1' && (
+        <p style={{ color: '#aaa', fontSize: '0.85rem', margin: '0.5rem 0 1rem' }}>モンスターハウス: 35F / 45F / 65F / 75F / 85F / 95F</p>
+      )}
       <MonsterTable monsters={data.monsters} />
       <ItemTable categories={data.itemCategories} />
       <p>{data.strategy}</p>
