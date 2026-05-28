@@ -50,20 +50,21 @@ export async function POST(req: NextRequest) {
 
   const pageKey = `counter:page:${pagePath.replace(/\//g, '_')}`
 
-  const tasks = [
-    redis.zadd('counter:online', { score: now, member: sessionId }),
-    redis.zremrangebyscore('counter:online', 0, now - ONLINE_TIMEOUT),
+  const tasks: Promise<number>[] = [
     redis.incr(pageKey),
   ]
 
-  // 合計・今日はセッション初回のみカウント
   if (countSession) {
-    tasks.push(redis.incr('counter:total') as Promise<unknown>)
-    tasks.push(redis.incr(`counter:day:${today}`) as Promise<unknown>)
-    if (isTop) tasks.push(redis.incr('counter:topTotal') as Promise<unknown>)
+    tasks.push(redis.incr('counter:total'))
+    tasks.push(redis.incr(`counter:day:${today}`))
+    if (isTop) tasks.push(redis.incr('counter:topTotal'))
   }
 
-  await Promise.all(tasks)
+  await Promise.all([
+    ...tasks,
+    redis.zadd('counter:online', { score: now, member: sessionId }),
+    redis.zremrangebyscore('counter:online', 0, now - ONLINE_TIMEOUT),
+  ])
 
   const [total, topTotal, todayCount, yesterday, online, pageCount] = await Promise.all([
     redis.get<number>('counter:total'),
