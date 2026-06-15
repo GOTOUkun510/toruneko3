@@ -1,9 +1,12 @@
 import { dungeonData } from '@/data/dungeons'
+import { extraDungeonData } from '@/data/extra_dungeons'
 import MonsterTable from '@/components/MonsterTable'
 import ItemTable from '@/components/ItemTable'
 
 export async function generateStaticParams() {
-  return Object.keys(dungeonData).map((id) => ({ id }))
+  const dungeonIds = Object.keys(dungeonData).map((id) => ({ id }))
+  const extraIds = Object.keys(extraDungeonData).map((id) => ({ id }))
+  return [...dungeonIds, ...extraIds]
 }
 
 function getDungeonFloors(monsters: { floors: string }[]): string {
@@ -19,7 +22,8 @@ function getDungeonFloors(monsters: { floors: string }[]): string {
 
 export default async function DungeonPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
-  const data = dungeonData[id]
+  const isExtra = id in extraDungeonData
+  const data = dungeonData[id] ?? extraDungeonData[id]
   if (!data) return <div><h1>ダンジョンが見つかりませんw</h1></div>
 
   const floors = getDungeonFloors(data.monsters)
@@ -32,38 +36,42 @@ export default async function DungeonPage({ params }: { params: Promise<{ id: st
           {floors && <span className="text-gray-400">{floors}</span>}
         </div>
         <p>{data.description}</p>
+        {/* 魔物の心髄（id=32）のみモンスターハウス情報を表示 */}
+        {id === '32' && (
+          <p style={{ color: '#aaa', fontSize: '0.85rem', margin: '0.5rem 0 1rem' }}>モンスターハウス: 35F / 45F / 65F / 75F / 85F / 95F</p>
+        )}
       </div>
       <MonsterTable monsters={data.monsters} />
       <ItemTable categories={data.itemCategories} />
-      {data.traps && data.traps.length > 0 && (
+      {'traps' in data && data.traps && (data.traps as string[]).length > 0 && (
         <table>
           <thead><tr><th>ワナ</th></tr></thead>
-          <tbody><tr><td>{data.traps.join(' / ')}</td></tr></tbody>
+          <tbody><tr><td>{(data.traps as string[]).join(' / ')}</td></tr></tbody>
         </table>
       )}
-      {data.modContent && (
+      {'modContent' in data && data.modContent && (
         <div style={{ padding: '0 2rem' }}>
           <h2 className="text-2xl font-bold" style={{ margin: '1.5rem 0 1rem' }}>MOD</h2>
-          {data.modContent.additionalItems && data.modContent.additionalItems.length > 0 && (
+          {(data.modContent as { additionalItems?: string[] }).additionalItems && (data.modContent as { additionalItems?: string[] }).additionalItems!.length > 0 && (
             <div style={{ marginBottom: '1rem' }}>
               <h3 className="text-xl font-semibold" style={{ marginBottom: '0.5rem' }}>追加アイテム</h3>
               <table>
                 <thead><tr><th>アイテム名</th></tr></thead>
                 <tbody>
-                  {data.modContent.additionalItems.map((item, i) => (
+                  {(data.modContent as { additionalItems: string[] }).additionalItems.map((item: string, i: number) => (
                     <tr key={i}><td>{item}</td></tr>
                   ))}
                 </tbody>
               </table>
             </div>
           )}
-          {data.modContent.additionalMonsters && data.modContent.additionalMonsters.length > 0 && (
+          {(data.modContent as { additionalMonsters?: unknown[] }).additionalMonsters && (data.modContent as { additionalMonsters?: unknown[] }).additionalMonsters!.length > 0 && (
             <div style={{ marginBottom: '1rem' }}>
               <h3 className="text-xl font-semibold" style={{ marginBottom: '0.5rem' }}>追加モンスター</h3>
-              <MonsterTable monsters={data.modContent.additionalMonsters} />
+              <MonsterTable monsters={(data.modContent as { additionalMonsters: Parameters<typeof MonsterTable>[0]['monsters'] }).additionalMonsters} />
             </div>
           )}
-          {data.modContent.hearts && data.modContent.hearts.length > 0 && (
+          {(data.modContent as { hearts?: { monsterName: string; heartName?: string; recruitRate?: number; clawChance?: string }[] }).hearts && (data.modContent as { hearts?: unknown[] }).hearts!.length > 0 && (
             <div style={{ marginBottom: '1rem' }}>
               <h3 className="text-xl font-semibold" style={{ marginBottom: '0.5rem' }}>モンスターのこころ</h3>
               <table>
@@ -76,7 +84,7 @@ export default async function DungeonPage({ params }: { params: Promise<{ id: st
                   </tr>
                 </thead>
                 <tbody>
-                  {data.modContent.hearts.map((h, i) => (
+                  {(data.modContent as { hearts: { monsterName: string; heartName?: string; recruitRate?: number; clawChance?: string }[] }).hearts.map((h, i) => (
                     <tr key={i}>
                       <td>{h.monsterName}</td>
                       <td>{h.heartName ?? ''}</td>

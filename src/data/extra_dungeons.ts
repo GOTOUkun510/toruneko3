@@ -1,4 +1,4 @@
-﻿type Monster = {
+type Monster = {
   name: string
   floors: string
   hp: number
@@ -21,7 +21,7 @@ type DungeonData = {
 }
 
 export const extraDungeonData: Record<string, DungeonData> = {
-  '1': { name: '魔物の心髄', description: 'MOD追加ダンジョン。全99階、Lv1持ち込み不可のポポロ専用高難度ダンジョン。', monsters: [
+  '32': { name: '魔物の心髄', description: 'MOD追加ダンジョン。全99階、Lv1持ち込み不可のポポロ専用高難度ダンジョン。', monsters: [
     { name: 'スライム', floors: '1~2', hp: 5, atk: 2, def: 2, heart: '普通早熟の心', recruitRate: 250, clawChance: '27.2%' },
     { name: 'スライムベス', floors: '1~3', hp: 6, atk: 3, def: 3, heart: '超早熟の心', recruitRate: 200, clawChance: '22.2%' },
     { name: 'ファントム', floors: '1~6', hp: 5, atk: 0, def: 1, heart: 'ピンチに透明の心', recruitRate: -178, clawChance: '0%' },
@@ -216,7 +216,7 @@ export const extraDungeonData: Record<string, DungeonData> = {
     { name: 'パンドラボックス', floors: '46~99', hp: 85, atk: 47, def: 27, heart: '白紙の心', recruitRate: 100, clawChance: '12.2%' },
     { name: 'ひとくいばこ', floors: '6~79', hp: 20, atk: 40, def: 10, heart: '白紙の心', recruitRate: 1, clawChance: '2.3%' },
   ], itemCategories: [], strategy: '' },
-  '2': { name: '未来へ続く道', description: '', monsters: [
+  '33': { name: '未来へ続く道', description: '', monsters: [
     { name: 'スライム', floors: '1~2', hp: 5, atk: 2, def: 2, heart: '-' },
     { name: 'スライムベス', floors: '1~3', hp: 6, atk: 3, def: 3, heart: '-' },
     { name: 'ドラキー', floors: '2~4', hp: 7, atk: 5, def: 2, heart: '-' },
@@ -352,7 +352,7 @@ export const extraDungeonData: Record<string, DungeonData> = {
     { name: 'ミミック', floors: '3~70', hp: 50, atk: 10, def: 15, heart: '-' },
     { name: 'パンドラボックス', floors: '71~99', hp: 85, atk: 47, def: 27, heart: '-' },
   ], itemCategories: [], strategy: '' },
-  '3': { name: 'もっと不思議の洞窟', description: '', monsters: [
+  '34': { name: 'もっと不思議の洞窟', description: '', monsters: [
     { name: 'スライム', floors: '1~3', hp: 5, atk: 2, def: 2, heart: '-' },
     { name: 'ドラキー', floors: '1~6', hp: 7, atk: 5, def: 2, heart: '-' },
     { name: 'おおナメクジ', floors: '1~6', hp: 17, atk: 8, def: 7, heart: '-' },

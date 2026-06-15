@@ -9,9 +9,9 @@ const links = [
 ]
 
 const extraDungeonLinks = [
-  { href: '/extra-dungeon/1', label: '魔物の心髄' },
-  { href: '/extra-dungeon/2', label: '未来へ続く道' },
-  { href: '/extra-dungeon/3', label: 'もっと不思議の洞窟' },
+  { href: '/dungeon/32', label: '魔物の心髄' },
+  { href: '/dungeon/33', label: '未来へ続く道' },
+  { href: '/dungeon/34', label: 'もっと不思議の洞窟' },
 ]
 
 const clearDungeonLinks = [
