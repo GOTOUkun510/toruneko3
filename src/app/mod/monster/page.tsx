@@ -1,4 +1,4 @@
-﻿import { modMonsters } from '@/data/modMonsters'
+import { modMonsters } from '@/data/modMonsters'
 import ClientImage from '@/components/ClientImage'
 import { Metadata } from 'next'
 

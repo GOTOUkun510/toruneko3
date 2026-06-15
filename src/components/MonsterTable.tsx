@@ -1,4 +1,4 @@
-﻿import ClientImage from './ClientImage'
+import ClientImage from './ClientImage'
 
 function getImageName(name: string): string {
   return name.replace(/^([LlＬ][Vvｖ]\d+|[LlＬ][Vvｖ][０-９]+)\s*/, '').replace(/\s*([LlＬ][Vvｖ]\d+|[LlＬ][Vvｖ][０-９]+)$/, '').trim()

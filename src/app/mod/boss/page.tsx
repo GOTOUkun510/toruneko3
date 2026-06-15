@@ -1,4 +1,4 @@
-﻿import ClientImage from '@/components/ClientImage'
+import ClientImage from '@/components/ClientImage'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

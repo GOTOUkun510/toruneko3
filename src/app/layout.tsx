@@ -14,8 +14,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "トルネコの大冒険3 攻略wiki MOD",
+  metadataBase: new URL("https://toruneko3.vercel.app"),
+  title: {
+    default: "トルネコの大冒険3 攻略wiki MOD",
+    template: "%s | トルネコの大冒険3 攻略wiki MOD",
+  },
   description: "トルネコの大冒険3（ドラゴンクエストキャラクターズ トルネコの大冒険3 不思議のダンジョン）MOD攻略wiki。魔物の心髄・未来へ続く道・もっと不思議の洞窟などMODダンジョンのモンスター・アイテム・攻略情報を掲載。",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "トルネコの大冒険3 攻略wiki MOD",
+    description: "トルネコの大冒険3 MOD攻略wiki。魔物の心髄・未来へ続く道・もっと不思議の洞窟などMODダンジョンの攻略情報まとめ。",
+    url: "https://toruneko3.vercel.app",
+    siteName: "トルネコの大冒険3 攻略wiki MOD",
+    locale: "ja_JP",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "トルネコの大冒険3 攻略wiki MOD",
+    description: "トルネコの大冒険3 MOD攻略wiki。魔物の心髄・未来へ続く道・もっと不思議の洞窟などMODダンジョンの攻略情報まとめ。",
+  },
 };
 
 export default function RootLayout({

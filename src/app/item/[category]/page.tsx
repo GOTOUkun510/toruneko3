@@ -14,6 +14,11 @@ export async function generateMetadata(
   return {
     title: `${data.label}一覧 | トルネコの大冒険3 攻略wiki MOD`,
     description: `トルネコの大冒険3 MODに登場する${data.label}の一覧。${data.label}の名称や性能、効果説明などを掲載しています。`,
+    // データが入るまでインデックスさせない（thin content対策）
+    robots: {
+      index: false,
+      follow: false,
+    },
   }
 }
 
