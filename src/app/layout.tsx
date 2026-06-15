@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
@@ -30,11 +30,20 @@ export const metadata: Metadata = {
     siteName: "トルネコの大冒険3 攻略wiki MOD",
     locale: "ja_JP",
     type: "website",
+    images: [
+      {
+        url: "/アイコン.jpg",
+        width: 512,
+        height: 512,
+        alt: "トルネコの大冒険3 攻略wiki MOD",
+      },
+    ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "トルネコの大冒険3 攻略wiki MOD",
     description: "トルネコの大冒険3 MOD攻略wiki。魔物の心髄・未来へ続く道・もっと不思議の洞窟などMODダンジョンの攻略情報まとめ。",
+    images: ["/アイコン.jpg"],
   },
 };
 
