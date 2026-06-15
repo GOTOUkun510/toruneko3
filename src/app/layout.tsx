@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "_j0g7NjT2gyMttX9dV-lyCuIXyAMEqd1WxANpPyP274",
+  },
   openGraph: {
     title: "トルネコの大冒険3 攻略wiki MOD",
     description: "トルネコの大冒険3 MOD攻略wiki。魔物の心髄・未来へ続く道・もっと不思議の洞窟などMODダンジョンの攻略情報まとめ。",
