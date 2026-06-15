@@ -1,4 +1,11 @@
-﻿export default function SlimeRingPage() {
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'スライムの指輪の効果 | トルネコの大冒険3 攻略wiki MOD',
+  description: 'トルネコの大冒険3 MODに登場するスライムの指輪の効果一覧。装備中にスライム系の仲間がレベルアップしたときのボーナスや覚える特技・特性をまとめています。',
+}
+
+export default function SlimeRingPage() {
   const slimes: { name: string; skills: string[] }[] = [
     { name: 'スライム', skills: ['Lv10：スクルト', 'Lv30：ザオラル'] },
     { name: 'スライムベス', skills: ['Lv10：ルカナン', 'Lv26：メダパニ'] },

@@ -1,4 +1,11 @@
-﻿export default function SpellbookPage() {
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'スペルブックの呪文一覧 | トルネコの大冒険3 攻略wiki MOD',
+  description: 'トルネコの大冒険3 MODに登場するスペルブックの呪文一覧。各呪文の効果や覚え方をまとめています。',
+}
+
+export default function SpellbookPage() {
   const spells = [
     { name: 'イオ', effect: '部屋内の敵全体に30ダメージ', how: '初めから覚えている' },
     { name: 'イオラ', effect: '部屋内の敵全体に50ダメージ', how: 'イオ1回で覚える' },

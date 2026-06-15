@@ -1,4 +1,10 @@
-﻿import { heartData } from '@/data/hearts'
+import { heartData } from '@/data/hearts'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'モンスターのこころ一覧 | トルネコの大冒険3 攻略wiki MOD',
+  description: 'トルネコの大冒険3 MODに登場する「モンスターのこころ」一覧。各モンスターのこころの効果や説明文を掲載しています。',
+}
 
 export default function ModHeartPage() {
   return (

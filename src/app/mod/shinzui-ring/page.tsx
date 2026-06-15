@@ -1,4 +1,11 @@
-﻿export default function ShinzuiRingPage() {
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '魔物の心髄 指輪価格表 | トルネコの大冒険3 攻略wiki MOD',
+  description: 'トルネコの大冒険3 MODの「魔物の心髄」ダンジョンで入手できる指輪の買値・売値一覧表。店での識別や売却時の参考にしてください。',
+}
+
+export default function ShinzuiRingPage() {
   const rings = [
     { name: '混乱よけの指輪', buy: 3000, sell: 1500 },
     { name: 'しあわせの指輪', buy: 4000, sell: 2000 },

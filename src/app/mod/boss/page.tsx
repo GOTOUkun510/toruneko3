@@ -1,4 +1,11 @@
-﻿'use client'
+import ClientImage from '@/components/ClientImage'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'BOSSモンスター一覧 | トルネコの大冒険3 攻略wiki MOD',
+  description: 'トルネコの大冒険3 MODに登場する追加BOSS（ボス）モンスターの一覧。ビッグハンマー、スカルマスター、魔物の心髄ボスなどの画像情報を掲載しています。',
+}
+
 export default function BossMonsterPage() {
   const bosses = [
     { name: 'ビッグハンマー' },
@@ -25,17 +32,15 @@ export default function BossMonsterPage() {
         {bosses.map((b) => (
           <div key={b.name} style={{ textAlign: 'center' }}>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-end' }}>
-              <img
+              <ClientImage
                 src={`/boss/${b.name}.jpg`}
                 alt={b.name}
                 style={{ width: '370px', height: 'auto' }}
-                onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
               />
-              <img
+              <ClientImage
                 src={`/monsters/${b.name}.jpg`}
                 alt={b.name}
                 style={{ width: 250, height: 250, objectFit: 'contain', objectPosition: 'bottom' }}
-                onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
               />
             </div>
             <div style={{ marginTop: '0.5rem', color: '#eee', fontSize: '0.9rem' }}>{b.name}</div>
@@ -48,17 +53,15 @@ export default function BossMonsterPage() {
         {shinzuiBosses.map((b) => (
           <div key={b.name} style={{ textAlign: 'center' }}>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-end' }}>
-              <img
+              <ClientImage
                 src={`/boss/${b.name}.jpg`}
                 alt={b.name}
                 style={{ width: '370px', height: 'auto' }}
-                onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
               />
-              <img
+              <ClientImage
                 src={`/monsters/${b.name}.jpg`}
                 alt={b.name}
                 style={{ width: 250, height: 250, objectFit: 'contain', objectPosition: 'bottom' }}
-                onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
               />
             </div>
             <div style={{ marginTop: '0.5rem', color: '#eee', fontSize: '0.9rem' }}>{b.name}</div>

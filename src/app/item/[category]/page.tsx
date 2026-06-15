@@ -1,4 +1,21 @@
 import { itemData } from '@/data/items'
+import { Metadata } from 'next'
+
+export async function generateMetadata(
+  { params }: { params: Promise<{ category: string }> }
+): Promise<Metadata> {
+  const { category } = await params
+  const data = itemData[category]
+  if (!data) {
+    return {
+      title: 'カテゴリが見つかりません',
+    }
+  }
+  return {
+    title: `${data.label}一覧 | トルネコの大冒険3 攻略wiki MOD`,
+    description: `トルネコの大冒険3 MODに登場する${data.label}の一覧。${data.label}の名称や性能、効果説明などを掲載しています。`,
+  }
+}
 
 export async function generateStaticParams() {
   return Object.keys(itemData).map((category) => ({ category }))
