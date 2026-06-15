@@ -9,7 +9,7 @@ export default function Home() {
       <div className="mt-10 p-6 bg-[#1e1e2e] border border-[#3a3a5c] rounded-lg text-center max-w-md">
         <p className="text-gray-300 text-sm leading-relaxed">
           このサイトは個人で制作・運営しています。<br />
-          ネット上の攻略サイトを使いやすくまとめた転載サイト<br />
+          トルネコ3MODの各種データをスマホからでも見やすく、整理して掲載している非公式ファンサイト・データベースです。<br />
           役に立ったらカンパいただけると励みになります。<br />
           2026/5/28作成
         </p>
