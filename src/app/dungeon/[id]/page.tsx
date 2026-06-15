@@ -2,6 +2,23 @@ import { dungeonData } from '@/data/dungeons'
 import { extraDungeonData } from '@/data/extra_dungeons'
 import MonsterTable from '@/components/MonsterTable'
 import ItemTable from '@/components/ItemTable'
+import { Metadata } from 'next'
+
+export async function generateMetadata(
+  { params }: { params: Promise<{ id: string }> }
+): Promise<Metadata> {
+  const { id } = await params
+  const data = dungeonData[id] ?? extraDungeonData[id]
+  if (!data) {
+    return {
+      title: 'ダンジョンが見つかりません',
+    }
+  }
+  return {
+    title: `${data.name} 攻略情報 | トルネコの大冒険3 攻略wiki MOD`,
+    description: data.description || `${data.name}の攻略情報、出現モンスター、出現アイテム、ワナ、MOD追加要素などをまとめています。`,
+  }
+}
 
 export async function generateStaticParams() {
   const dungeonIds = Object.keys(dungeonData).map((id) => ({ id }))
