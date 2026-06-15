@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { dungeonData } from '@/data/dungeons'
 import { extraDungeonData } from '@/data/extra_dungeons'
+import { itemData } from '@/data/items'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://toruneko3.vercel.app'
@@ -33,5 +34,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...routes, ...dungeons]
+  // アイテムカテゴリページ
+  const items = Object.keys(itemData).map((category) => ({
+    url: `${baseUrl}/item/${category}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }))
+
+  return [...routes, ...dungeons, ...items]
 }
