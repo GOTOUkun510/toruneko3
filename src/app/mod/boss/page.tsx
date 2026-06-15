@@ -1,4 +1,4 @@
-import ClientImage from '@/components/ClientImage'
+﻿import ClientImage from '@/components/ClientImage'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -39,7 +39,7 @@ export default function BossMonsterPage() {
               />
               <ClientImage
                 src={`/monsters/${b.name}.jpg`}
-                alt={`${b.name}の画像`}
+                alt={b.name}
                 style={{ width: 250, height: 250, objectFit: 'contain', objectPosition: 'bottom' }}
               />
             </div>
@@ -60,7 +60,7 @@ export default function BossMonsterPage() {
               />
               <ClientImage
                 src={`/monsters/${b.name}.jpg`}
-                alt={`${b.name}の画像`}
+                alt={b.name}
                 style={{ width: 250, height: 250, objectFit: 'contain', objectPosition: 'bottom' }}
               />
             </div>

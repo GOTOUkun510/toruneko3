@@ -1,4 +1,4 @@
-import { modMonsters } from '@/data/modMonsters'
+﻿import { modMonsters } from '@/data/modMonsters'
 import ClientImage from '@/components/ClientImage'
 import { Metadata } from 'next'
 
@@ -20,7 +20,7 @@ function MonsterName({ name }: { name: string }) {
     <span style={{ display: 'inline-flex', alignItems: 'flex-start', gap: '6px' }}>
       <ClientImage
         src={`/monsters/${imgName}.jpg`}
-        alt={`${name}の画像`}
+        alt={name}
         style={{ width: 60, height: 60, objectFit: 'contain', objectPosition: 'bottom', display: 'block' }}
       />
       {name}

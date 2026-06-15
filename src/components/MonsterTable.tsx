@@ -1,4 +1,4 @@
-import ClientImage from './ClientImage'
+﻿import ClientImage from './ClientImage'
 
 function getImageName(name: string): string {
   return name.replace(/^([LlＬ][Vvｖ]\d+|[LlＬ][Vvｖ][０-９]+)\s*/, '').replace(/\s*([LlＬ][Vvｖ]\d+|[LlＬ][Vvｖ][０-９]+)$/, '').trim()
@@ -11,7 +11,7 @@ function MonsterName({ name }: { name: string }) {
       <ClientImage
         key={imgName}
         src={`/monsters/${imgName}.jpg`}
-        alt={`${name}の画像`}
+        alt={name}
         style={{ width: 60, height: 60, objectFit: 'contain', objectPosition: 'bottom', display: 'block' }}
       />
       {name}
