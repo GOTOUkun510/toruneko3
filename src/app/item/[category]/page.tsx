@@ -34,23 +34,96 @@ export default async function ItemPage({ params }: { params: Promise<{ category:
   return (
     <main style={{ padding: '2rem' }}>
       <h1>{data.label}一覧</h1>
-      <table>
-        <thead>
-          <tr><th>名前</th><th>売値</th><th>買値</th><th>印数</th><th>印</th><th>説明・補足</th></tr>
-        </thead>
-        <tbody>
-          {data.items.map((item) => (
-            <tr key={item.name}>
-              <td>{item.name}</td>
-              <td>{item.sellPrice ?? ''}</td>
-              <td>{item.buyPrice ?? ''}</td>
-              <td>{item.slots ?? ''}</td>
-              <td>{item.marks ?? ''}</td>
-              <td>{[item.description, item.note].filter(Boolean).join(' / ')}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {category === 'weapon' ? (
+        <table>
+          <thead>
+            <tr><th>名前</th><th>攻撃力</th><th>印数</th><th>強化限界</th><th>買値</th><th>売値</th><th>印</th><th>特殊効果</th></tr>
+          </thead>
+          <tbody>
+            {data.items.map((item) => (
+              <tr key={item.name}>
+                <td>{item.name}</td>
+                <td>{item.attack ?? ''}</td>
+                <td>{item.slots ?? ''}</td>
+                <td>{item.maxLevel ?? ''}</td>
+                <td>{item.buyPrice ?? ''}</td>
+                <td>{item.sellPrice ?? ''}</td>
+                <td>{item.marks ?? ''}</td>
+                <td>{[item.description, item.note].filter(Boolean).join(' / ')}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : category === 'other' ? (
+        <table>
+          <thead>
+            <tr><th>名前</th><th>特殊効果</th></tr>
+          </thead>
+          <tbody>
+            {data.items.map((item) => (
+              <tr key={item.name}>
+                <td>{item.name}</td>
+                <td>{[item.description, item.note].filter(Boolean).join(' / ')}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : category === 'shield' ? (
+        <table>
+          <thead>
+            <tr><th>名前</th><th>防御力</th><th>印数</th><th>強化限界</th><th>買値</th><th>売値</th><th>重さ</th><th>印</th><th>説明</th></tr>
+          </thead>
+          <tbody>
+            {data.items.map((item) => (
+              <tr key={item.name}>
+                <td>{item.name}</td>
+                <td>{item.attack ?? ''}</td>
+                <td>{item.slots ?? ''}</td>
+                <td>{item.maxLevel ?? ''}</td>
+                <td>{item.buyPrice ?? ''}</td>
+                <td>{item.sellPrice ?? ''}</td>
+                <td>{item.weight ?? ''}</td>
+                <td>{item.marks ?? ''}</td>
+                <td>{[item.description, item.note].filter(Boolean).join(' / ')}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : category === 'ring' ? (
+        <table>
+          <thead>
+            <tr><th>名前</th><th>印数</th><th>買値</th><th>売値</th><th>印</th><th>説明</th></tr>
+          </thead>
+          <tbody>
+            {data.items.map((item) => (
+              <tr key={item.name}>
+                <td>{item.name}</td>
+                <td>{item.slots ?? ''}</td>
+                <td>{item.buyPrice ?? ''}</td>
+                <td>{item.sellPrice ?? ''}</td>
+                <td>{item.marks ?? ''}</td>
+                <td>{[item.description, item.note].filter(Boolean).join(' / ')}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <table>
+          <thead>
+            <tr><th>名前</th><th>買値</th><th>売値</th><th>特殊効果</th></tr>
+          </thead>
+          <tbody>
+            {data.items.map((item) => (
+              <tr key={item.name}>
+                <td>{item.name}</td>
+                <td>{item.buyPrice ?? ''}</td>
+                <td>{item.sellPrice ?? ''}</td>
+                <td>{[item.description, item.note].filter(Boolean).join(' / ')}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </main>
   )
 }
