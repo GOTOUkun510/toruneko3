@@ -36,13 +36,15 @@ export default async function ItemPage({ params }: { params: Promise<{ category:
       <h1>{data.label}一覧</h1>
       <table>
         <thead>
-          <tr><th>名前</th><th>説明</th></tr>
+          <tr><th>名前</th><th>売値</th><th>買値</th><th>説明・補足</th></tr>
         </thead>
         <tbody>
           {data.items.map((item) => (
             <tr key={item.name}>
               <td>{item.name}</td>
-              <td>{item.description ?? ''}</td>
+              <td>{item.sellPrice ?? ''}</td>
+              <td>{item.buyPrice ?? ''}</td>
+              <td>{item.description ?? item.note ?? ''}</td>
             </tr>
           ))}
         </tbody>
