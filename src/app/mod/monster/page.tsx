@@ -20,7 +20,7 @@ function MonsterName({ name }: { name: string }) {
     <span style={{ display: 'inline-flex', alignItems: 'flex-start', gap: '6px' }}>
       <ClientImage
         src={`/monsters/${imgName}.jpg`}
-        alt=""
+        alt={`${name}の画像`}
         style={{ width: 60, height: 60, objectFit: 'contain', objectPosition: 'bottom', display: 'block' }}
       />
       {name}

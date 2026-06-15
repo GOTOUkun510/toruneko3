@@ -1,5 +1,4 @@
-'use client'
-
+import ClientImage from './ClientImage'
 
 function getImageName(name: string): string {
   return name.replace(/^([LlＬ][Vvｖ]\d+|[LlＬ][Vvｖ][０-９]+)\s*/, '').replace(/\s*([LlＬ][Vvｖ]\d+|[LlＬ][Vvｖ][０-９]+)$/, '').trim()
@@ -9,12 +8,11 @@ function MonsterName({ name }: { name: string }) {
   const imgName = getImageName(name)
   return (
     <span style={{ display: 'inline-flex', alignItems: 'flex-start', gap: '6px', whiteSpace: 'nowrap' }}>
-      <img
+      <ClientImage
         key={imgName}
         src={`/monsters/${imgName}.jpg`}
-        alt=""
+        alt={`${name}の画像`}
         style={{ width: 60, height: 60, objectFit: 'contain', objectPosition: 'bottom', display: 'block' }}
-        onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
       />
       {name}
     </span>

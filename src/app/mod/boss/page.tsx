@@ -34,12 +34,12 @@ export default function BossMonsterPage() {
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-end' }}>
               <ClientImage
                 src={`/boss/${b.name}.jpg`}
-                alt={b.name}
+                alt={`ボス・${b.name}の出現画像`}
                 style={{ width: '370px', height: 'auto' }}
               />
               <ClientImage
                 src={`/monsters/${b.name}.jpg`}
-                alt={b.name}
+                alt={`${b.name}の画像`}
                 style={{ width: 250, height: 250, objectFit: 'contain', objectPosition: 'bottom' }}
               />
             </div>
@@ -55,12 +55,12 @@ export default function BossMonsterPage() {
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-end' }}>
               <ClientImage
                 src={`/boss/${b.name}.jpg`}
-                alt={b.name}
+                alt={`ボス・${b.name}の出現画像`}
                 style={{ width: '370px', height: 'auto' }}
               />
               <ClientImage
                 src={`/monsters/${b.name}.jpg`}
-                alt={b.name}
+                alt={`${b.name}の画像`}
                 style={{ width: 250, height: 250, objectFit: 'contain', objectPosition: 'bottom' }}
               />
             </div>
