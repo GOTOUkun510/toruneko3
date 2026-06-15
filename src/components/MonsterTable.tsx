@@ -6,14 +6,18 @@ function getImageName(name: string): string {
 
 function MonsterName({ name }: { name: string }) {
   const imgName = getImageName(name)
+  // マネマネは他モンスターに変身するため専用画像が存在しない。画像なしで表示する
+  const hasImage = imgName !== 'マネマネ'
   return (
     <span style={{ display: 'inline-flex', alignItems: 'flex-start', gap: '6px', whiteSpace: 'nowrap' }}>
-      <ClientImage
-        key={imgName}
-        src={`/monsters/${imgName}.jpg`}
-        alt={name}
-        style={{ width: 60, height: 60, objectFit: 'contain', objectPosition: 'bottom', display: 'block' }}
-      />
+      {hasImage && (
+        <ClientImage
+          key={imgName}
+          src={`/monsters/${imgName}.jpg`}
+          alt={name}
+          style={{ width: 60, height: 60, objectFit: 'contain', objectPosition: 'bottom', display: 'block' }}
+        />
+      )}
       {name}
     </span>
   )

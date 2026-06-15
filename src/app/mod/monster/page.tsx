@@ -16,13 +16,17 @@ function getImageName(name: string): string {
 
 function MonsterName({ name }: { name: string }) {
   const imgName = getImageName(name)
+  // マネマネ・ホロゴーストは専用画像が存在しない（マネマネは変身モンスター）
+  const hasImage = imgName !== 'マネマネ' && imgName !== 'ホロゴースト'
   return (
     <span style={{ display: 'inline-flex', alignItems: 'flex-start', gap: '6px' }}>
-      <ClientImage
-        src={`/monsters/${imgName}.jpg`}
-        alt={name}
-        style={{ width: 60, height: 60, objectFit: 'contain', objectPosition: 'bottom', display: 'block' }}
-      />
+      {hasImage && (
+        <ClientImage
+          src={`/monsters/${imgName}.jpg`}
+          alt={name}
+          style={{ width: 60, height: 60, objectFit: 'contain', objectPosition: 'bottom', display: 'block' }}
+        />
+      )}
       {name}
     </span>
   )
