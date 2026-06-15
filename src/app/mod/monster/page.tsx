@@ -1,10 +1,24 @@
-import { modMonsters } from '@/data/modMonsters'
+﻿import { modMonsters } from '@/data/modMonsters'
 import ClientImage from '@/components/ClientImage'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: '追加モンスター一覧 | トルネコの大冒険3 攻略wiki MOD',
   description: 'トルネコの大冒険3 MOD（Ver0.2.4対応）で追加されたモンスターの一覧。各モンスターのHP、攻撃力、防御力、系統、特性、特技、成長タイプ、勧誘率などをまとめています。',
+  alternates: { canonical: '/mod/monster' },
+  openGraph: {
+    title: '追加モンスター一覧 | トルネコの大冒険3 攻略wiki MOD',
+    description: 'トルネコの大冒険3 MODで追加されたモンスターの一覧。',
+    url: 'https://toruneko3.vercel.app/mod/monster',
+    siteName: 'トルネコの大冒険3 攻略wiki MOD',
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: '追加モンスター一覧 | トルネコの大冒険3 攻略wiki MOD',
+    description: 'トルネコの大冒険3 MODで追加されたモンスターの一覧。',
+  },
 }
 
 function getImageName(name: string): string {

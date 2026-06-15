@@ -1,8 +1,22 @@
-import { Metadata } from 'next'
+﻿import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: '魔物の心髄 指輪価格表 | トルネコの大冒険3 攻略wiki MOD',
   description: 'トルネコの大冒険3 MODの「魔物の心髄」ダンジョンで入手できる指輪の買値・売値一覧表。店での識別や売却時の参考にしてください。',
+  alternates: { canonical: '/mod/shinzui-ring' },
+  openGraph: {
+    title: '魔物の心髄 指輪価格表 | トルネコの大冒険3 攻略wiki MOD',
+    description: '魔物の心髄ダンジョンで入手できる指輪の買値・売値一覧表。',
+    url: 'https://toruneko3.vercel.app/mod/shinzui-ring',
+    siteName: 'トルネコの大冒険3 攻略wiki MOD',
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: '魔物の心髄 指輪価格表 | トルネコの大冒険3 攻略wiki MOD',
+    description: '魔物の心髄ダンジョンで入手できる指輪の買値・売値一覧表。',
+  },
 }
 
 export default function ShinzuiRingPage() {

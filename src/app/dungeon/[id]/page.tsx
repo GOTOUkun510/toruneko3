@@ -14,9 +14,26 @@ export async function generateMetadata(
       title: 'ダンジョンが見つかりません',
     }
   }
+  const desc = data.description || `${data.name}の攻略情報、出現モンスター、出現アイテム、ワナ、MOD追加要素などをまとめています。`
   return {
     title: `${data.name} 攻略情報 | トルネコの大冒険3 攻略wiki MOD`,
-    description: data.description || `${data.name}の攻略情報、出現モンスター、出現アイテム、ワナ、MOD追加要素などをまとめています。`,
+    description: desc,
+    alternates: {
+      canonical: `/dungeon/${id}`,
+    },
+    openGraph: {
+      title: `${data.name} 攻略情報 | トルネコの大冒険3 攻略wiki MOD`,
+      description: desc,
+      url: `https://toruneko3.vercel.app/dungeon/${id}`,
+      siteName: 'トルネコの大冒険3 攻略wiki MOD',
+      locale: 'ja_JP',
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary',
+      title: `${data.name} 攻略情報 | トルネコの大冒険3 攻略wiki MOD`,
+      description: desc,
+    },
   }
 }
 

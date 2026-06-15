@@ -1,8 +1,22 @@
-import { Metadata } from 'next'
+﻿import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'スペルブックの呪文一覧 | トルネコの大冒険3 攻略wiki MOD',
   description: 'トルネコの大冒険3 MODに登場するスペルブックの呪文一覧。各呪文の効果や覚え方をまとめています。',
+  alternates: { canonical: '/mod/spellbook' },
+  openGraph: {
+    title: 'スペルブックの呪文一覧 | トルネコの大冒険3 攻略wiki MOD',
+    description: 'トルネコの大冒険3 MODのスペルブック呪文一覧。',
+    url: 'https://toruneko3.vercel.app/mod/spellbook',
+    siteName: 'トルネコの大冒険3 攻略wiki MOD',
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'スペルブックの呪文一覧 | トルネコの大冒険3 攻略wiki MOD',
+    description: 'トルネコの大冒険3 MODのスペルブック呪文一覧。',
+  },
 }
 
 export default function SpellbookPage() {

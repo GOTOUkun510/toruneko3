@@ -1,9 +1,23 @@
-import { modItems } from '@/data/modItems'
+﻿import { modItems } from '@/data/modItems'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: '追加アイテム一覧 | トルネコの大冒険3 攻略wiki MOD',
   description: 'トルネコの大冒険3 MOD（Ver0.2.x対応）で追加されたアイテムの一覧。各種追加武器・盾・指輪等の能力や印数、説明をまとめています。',
+  alternates: { canonical: '/mod/item' },
+  openGraph: {
+    title: '追加アイテム一覧 | トルネコの大冒険3 攻略wiki MOD',
+    description: 'トルネコの大冒険3 MODで追加されたアイテムの一覧。',
+    url: 'https://toruneko3.vercel.app/mod/item',
+    siteName: 'トルネコの大冒険3 攻略wiki MOD',
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: '追加アイテム一覧 | トルネコの大冒険3 攻略wiki MOD',
+    description: 'トルネコの大冒険3 MODで追加されたアイテムの一覧。',
+  },
 }
 
 export default function ModItemPage() {
