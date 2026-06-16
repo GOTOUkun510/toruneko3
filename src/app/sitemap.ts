@@ -6,9 +6,40 @@ import { itemData } from '@/data/items'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://toruneko3.vercel.app'
 
-  // 静的なメインルートとMOD関連ページ
-  const routes = [
-    '',
+  // トップページ
+  const top: MetadataRoute.Sitemap = [{
+    url: baseUrl,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 1.0,
+  }]
+
+  // ダンジョン詳細ページ (dungeon/1〜31)
+  const dungeons: MetadataRoute.Sitemap = Object.keys(dungeonData).map((id) => ({
+    url: `${baseUrl}/dungeon/${id}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }))
+
+  // 追加ダンジョン詳細ページ (dungeon/32〜34、extraDungeonDataのキーは32〜34)
+  const extraDungeons: MetadataRoute.Sitemap = Object.keys(extraDungeonData).map((id) => ({
+    url: `${baseUrl}/dungeon/${id}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }))
+
+  // アイテムカテゴリページ (item/weapon 等 11カテゴリ)
+  const items: MetadataRoute.Sitemap = Object.keys(itemData).map((category) => ({
+    url: `${baseUrl}/item/${category}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.6,
+  }))
+
+  // MODページ (mod/boss 等 7ページ)
+  const mod: MetadataRoute.Sitemap = [
     '/mod/boss',
     '/mod/heart',
     '/mod/item',
@@ -19,28 +50,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1.0 : 0.8,
-  }))
-
-  // 通常ダンジョンと追加ダンジョンの全詳細ページ (ID 1〜34)
-  const dungeons = [
-    ...Object.keys(dungeonData),
-    ...Object.keys(extraDungeonData),
-  ].map((id) => ({
-    url: `${baseUrl}/dungeon/${id}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
+    changeFrequency: 'weekly',
     priority: 0.6,
   }))
 
-  // アイテムカテゴリページ
-  const items = Object.keys(itemData).map((category) => ({
-    url: `${baseUrl}/item/${category}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }))
-
-  return [...routes, ...dungeons, ...items]
+  return [...top, ...dungeons, ...extraDungeons, ...items, ...mod]
 }
