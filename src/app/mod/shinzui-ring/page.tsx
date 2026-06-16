@@ -66,7 +66,7 @@ export default function ShinzuiRingPage() {
 
   return (
     <main style={{ padding: "2rem" }}>
-      <h1>魔物の心髄 指輪表</h1>
+      <h1>魔物の心髄 指輪一覧【トルネコの大冒険3 MOD】</h1>
       <p style={{ color: '#aaa', marginBottom: '1rem', fontSize: '0.85rem' }}>
         トルネコ3MOD2の魔物の心髄で入手できる指輪の価格表。
       </p>

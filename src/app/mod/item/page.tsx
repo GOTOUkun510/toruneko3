@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function ModItemPage() {
   return (
     <main style={{ padding: "2rem" }}>
-      <h1>追加アイテム一覧</h1>
+      <h1>追加アイテム一覧【トルネコの大冒険3 MOD】</h1>
       <p style={{ marginBottom: '1rem', color: '#aaa' }}>トルネコ3MOD2に登場する追加アイテム。(Ver0.2.x)</p>
       <table>
         <thead>

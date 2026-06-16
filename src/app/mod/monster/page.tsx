@@ -49,7 +49,7 @@ function MonsterName({ name }: { name: string }) {
 export default function ModMonsterPage() {
   return (
     <main style={{ padding: "2rem" }}>
-      <h1>追加モンスター一覧</h1>
+      <h1>追加モンスター一覧【トルネコの大冒険3 MOD】</h1>
       <p style={{ marginBottom: '1rem', color: '#aaa' }}>トルネコ3MOD2の追加モンスター。(Ver0.2.4対応)</p>
       <table>
         <thead>

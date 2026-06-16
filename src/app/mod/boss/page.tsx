@@ -40,7 +40,7 @@ export default function BossMonsterPage() {
 
   return (
     <main style={{ padding: "2rem" }}>
-      <h1>BOSSモンスター</h1>
+      <h1>BOSSモンスター一覧【トルネコの大冒険3 MOD】</h1>
       <p style={{ marginBottom: '1rem', color: '#aaa', fontSize: '0.85rem' }}>トルネコ3MOD2のBOSSモンスター。</p>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
         {bosses.map((b) => (

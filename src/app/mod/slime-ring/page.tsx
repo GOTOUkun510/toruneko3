@@ -49,7 +49,7 @@ export default function SlimeRingPage() {
 
   return (
     <main style={{ padding: "2rem" }}>
-      <h1>スライムの指輪の効果</h1>
+      <h1>スライムの指輪の効果【トルネコの大冒険3 MOD】</h1>
       <p style={{ color: '#aaa', marginBottom: '0.5rem', fontSize: '0.85rem' }}>
         トルネコ3MOD2のスライムの指輪の効果。
       </p>

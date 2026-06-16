@@ -47,7 +47,7 @@ export default function SpellbookPage() {
 
   return (
     <main style={{ padding: "2rem" }}>
-      <h1>スペルブックの呪文一覧</h1>
+      <h1>スペルブックの呪文一覧【トルネコの大冒険3 MOD】</h1>
       <p style={{ color: '#aaa', marginBottom: '1rem', fontSize: '0.85rem' }}>
         トルネコ3MOD2のスペルブックに書き込まれる呪文の調査データです。
       </p>

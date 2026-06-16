@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function ModHeartPage() {
   return (
     <main style={{ padding: "2rem" }}>
-      <h1>モンスターのこころ</h1>
+      <h1>モンスターのこころ一覧【トルネコの大冒険3 MOD】</h1>
       <img
         src="/奇跡の心.jpg"
         alt="奇跡の心"
