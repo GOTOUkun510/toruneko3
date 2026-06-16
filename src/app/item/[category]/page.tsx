@@ -45,7 +45,7 @@ export default async function ItemPage({ params }: { params: Promise<{ category:
 
   return (
     <main style={{ padding: '2rem' }}>
-      <h1>{data.label}一覧</h1>
+      <h1>{data.label}一覧【トルネコの大冒険3 攻略wiki MOD】</h1>
       {category === 'weapon' ? (
         <table>
           <thead>

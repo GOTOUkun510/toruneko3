@@ -1,3 +1,24 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'トルネコの大冒険3 攻略wiki MOD',
+  description: 'トルネコの大冒険3（ドラゴンクエストキャラクターズ トルネコの大冒険3 不思議のダンジョン）MOD攻略wiki。モンスター270体画像つき、ダンジョン攻略・アイテム・モンスターのこころ・スペルブックなど2026年最新情報を掲載。スマホ対応。',
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'トルネコの大冒険3 攻略wiki MOD',
+    description: 'トルネコの大冒険3 MOD攻略wiki。モンスター270体画像つき、ダンジョン攻略・アイテム・モンスターのこころなど2026年最新情報を掲載。',
+    url: 'https://toruneko3.vercel.app',
+    siteName: 'トルネコの大冒険3 攻略wiki MOD',
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'トルネコの大冒険3 攻略wiki MOD',
+    description: 'トルネコの大冒険3 MOD攻略wiki。モンスター270体画像つき、2026年最新情報を掲載。',
+  },
+}
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#1a1a2e] text-white">
