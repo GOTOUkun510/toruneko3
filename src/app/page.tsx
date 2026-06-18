@@ -35,7 +35,7 @@ export default function Home() {
           2026/5/28作成
         </p>
         <a
-          href="https://www.amazon.jp/hz/wishlist/ls/39YE10UQUYE10?ref_=wl_share"
+          href="https://www.amazon.jp/hz/wishlist/ls/KQNS14E0UZ4X?ref_=wl_share"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block mt-4 px-5 py-2 bg-[#f90] text-black font-bold rounded hover:bg-[#e68a00] transition-colors text-sm"
