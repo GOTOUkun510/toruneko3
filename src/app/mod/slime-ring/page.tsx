@@ -1,7 +1,7 @@
-﻿import { Metadata } from 'next'
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'スライムの指輪の効果 | トルネコの大冒険3 攻略wiki MOD',
+  title: 'スライムの指輪の効果',
   description: 'トルネコの大冒険3 MODに登場するスライムの指輪の効果一覧。装備中にスライム系の仲間がレベルアップしたときのボーナスや覚える特技・特性をまとめています。',
   alternates: { canonical: '/mod/slime-ring' },
   openGraph: {

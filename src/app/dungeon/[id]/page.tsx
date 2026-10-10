@@ -16,7 +16,7 @@ export async function generateMetadata(
   }
   const desc = data.description || `${data.name}の攻略情報、出現モンスター、出現アイテム、ワナ、MOD追加要素などをまとめています。`
   return {
-    title: `${data.name} 攻略情報 | トルネコの大冒険3 攻略wiki MOD`,
+    title: `${data.name} 攻略情報`,
     description: desc,
     alternates: {
       canonical: `/dungeon/${id}`,

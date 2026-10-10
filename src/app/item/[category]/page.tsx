@@ -1,4 +1,4 @@
-﻿import { itemData } from '@/data/items'
+import { itemData } from '@/data/items'
 import { Metadata } from 'next'
 
 export async function generateMetadata(
@@ -13,7 +13,7 @@ export async function generateMetadata(
   }
   const desc = `トルネコの大冒険3 MODに登場する${data.label}の一覧。${data.label}の名称や性能、効果説明などを掲載しています。`
   return {
-    title: `${data.label}一覧 | トルネコの大冒険3 攻略wiki MOD`,
+    title: `${data.label}一覧`,
     description: desc,
     alternates: {
       canonical: `/item/${category}`,

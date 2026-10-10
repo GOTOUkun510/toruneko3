@@ -1,8 +1,8 @@
-﻿import ClientImage from '@/components/ClientImage'
+import ClientImage from '@/components/ClientImage'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'BOSSモンスター一覧 | トルネコの大冒険3 攻略wiki MOD',
+  title: 'BOSSモンスター一覧',
   description: 'トルネコの大冒険3 MODに登場する追加BOSS（ボス）モンスターの一覧。ビッグハンマー、スカルマスター、魔物の心髄ボスなどの画像情報を掲載しています。',
   alternates: { canonical: '/mod/boss' },
   openGraph: {

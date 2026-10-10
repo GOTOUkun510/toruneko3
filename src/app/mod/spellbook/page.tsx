@@ -1,7 +1,7 @@
-﻿import { Metadata } from 'next'
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'スペルブックの呪文一覧 | トルネコの大冒険3 攻略wiki MOD',
+  title: 'スペルブックの呪文一覧',
   description: 'トルネコの大冒険3 MODに登場するスペルブックの呪文一覧。各呪文の効果や覚え方をまとめています。',
   alternates: { canonical: '/mod/spellbook' },
   openGraph: {
